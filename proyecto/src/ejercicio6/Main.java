@@ -69,24 +69,24 @@ public class Main {
             }
         }
         if (contadorPesoIDeal > 0) {
-            double porcentajePesoIdeal = (double) 4 /(contadorPesoIDeal);
+            double porcentajePesoIdeal = (double) (contadorPesoIDeal)/ 4;
             System.out.println("El porcentaje de peso ideal es: " + porcentajePesoIdeal);
         }
         if (contadorSobrePeso > 0) {
-            double porcentajeSobrePeso = (double) 4 / (contadorSobrePeso) ;
+            double porcentajeSobrePeso = (double)  (contadorSobrePeso)/ 4 ;
             System.out.println("El porcebtaje de sobrepeso es: " + porcentajeSobrePeso);
         }
         if(contadorInfraPeso > 0) {
-            double porcentajeInfraPeso = (double) 4 / (contadorInfraPeso);
+            double porcentajeInfraPeso = (double) (contadorInfraPeso) / 4;
             System.out.println("El porcentaje de infrapeso es: " + porcentajeInfraPeso);
         }
 
         if(contadorMayorDeEdad > 0){
-            double porcentajeMayorDeEdad = (double)4 / (contadorMayorDeEdad);
+            double porcentajeMayorDeEdad = (double)(contadorMayorDeEdad) / 4;
             System.out.println("El porcentaje de mayores de edad son: " + porcentajeMayorDeEdad);
         }
         if(contadorMenorDeEdad > 0){
-            double porcentajeMenorDeEdad = (double) 4/ (contadorMenorDeEdad);
+            double porcentajeMenorDeEdad = (double) (contadorMenorDeEdad) / 4;
             System.out.println("El porcentaje de menores de edad son: " + porcentajeMenorDeEdad);
         }
     }
