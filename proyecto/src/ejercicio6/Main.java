@@ -1,4 +1,8 @@
 package ejercicio6;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /*
 Realizar una clase llamada Persona que tenga los siguientes atributos: nombre, edad,
 sexo ('H' hombre, 'M' mujer, 'O' otro), peso y altura. Si el alumno desea añadir algún
@@ -31,7 +35,60 @@ encima, y también calcularemos un porcentaje de cuantos son mayores de edad y
 cuantos menores
  */
 public class Main {
-    public static void main(String[]args){
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in).useDelimiter("\n");
+        PersonaServicio personaService = new PersonaServicio();
 
+        ArrayList<Persona> personas = new ArrayList<>();
+        int contadorPesoIDeal = 0, contadorSobrePeso = 0, contadorInfraPeso = 0;
+        int contadorMayorDeEdad = 0, contadorMenorDeEdad = 0;
+        for (int i = 0; i < 4; i++) {
+            Persona persona = personaService.crearPersona();
+            personas.add(i, persona);
+        }
+
+        for (int i = 0; i < personas.size(); i++) {
+            if (personaService.calcularIMC(personas.get(i)) == -1) {
+                System.out.println("La persona " + i + ", de nombre " + personas.get(i).getNombre() + ", está en su peso ideal");
+                contadorPesoIDeal++;
+            } else if (personaService.calcularIMC(personas.get(i)) == 0) {
+                System.out.println("La persona " + i + ", de nombre " + personas.get(i).getNombre() + ", está por debajo de su peso ideal");
+                contadorInfraPeso++;
+            } else {
+                System.out.println("La persona " + i + ", de nombre " + personas.get(i).getNombre() + ", está con sobrepeso");
+                contadorSobrePeso++;
+            }
+        }
+
+        for (int i = 0; i < personas.size(); i++) {
+            if (personaService.esMayor(personas.get(i))) {
+                System.out.println("La persona " + i + ", de nombre " + personas.get(i).getNombre() + ", es mayor");
+                contadorMayorDeEdad++;
+            } else {
+                contadorMenorDeEdad++;
+            }
+        }
+        if (contadorPesoIDeal > 0) {
+            double porcentajePesoIdeal = (double) 4 /(contadorPesoIDeal);
+            System.out.println("El porcentaje de peso ideal es: " + porcentajePesoIdeal);
+        }
+        if (contadorSobrePeso > 0) {
+            double porcentajeSobrePeso = (double) 4 / (contadorSobrePeso) ;
+            System.out.println("El porcebtaje de sobrepeso es: " + porcentajeSobrePeso);
+        }
+        if(contadorInfraPeso > 0) {
+            double porcentajeInfraPeso = (double) 4 / (contadorInfraPeso);
+            System.out.println("El porcentaje de infrapeso es: " + porcentajeInfraPeso);
+        }
+
+        if(contadorMayorDeEdad > 0){
+            double porcentajeMayorDeEdad = (double)4 / (contadorMayorDeEdad);
+            System.out.println("El porcentaje de mayores de edad son: " + porcentajeMayorDeEdad);
+        }
+        if(contadorMenorDeEdad > 0){
+            double porcentajeMenorDeEdad = (double) 4/ (contadorMenorDeEdad);
+            System.out.println("El porcentaje de menores de edad son: " + porcentajeMenorDeEdad);
+        }
     }
 }
+
