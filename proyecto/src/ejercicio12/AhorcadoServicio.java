@@ -49,24 +49,24 @@ public class AhorcadoServicio {
     protected void buscarLetra(Ahorcado ahorcado) {
         int contador = ahorcado.getCantidadLetrasEncontradas();
         int jugadasMaximas = ahorcado.getJugadasMaximas();
-        boolean contieneLaLetra = true;
+        boolean noContieneLaLetra = true;
         System.out.println("Ingrese la letra a buscar ");
         char letra = sc.next().charAt(0);
-        char letraABuscar;
-        for (int i = 0; i < ahorcado.getPalabraABuscar().length; i++) {
-            letraABuscar = ahorcado.getPalabraABuscar()[i];
-            if(letraABuscar ==  letra){
-                contieneLaLetra = false;
-                ahorcado.setCantidadLetrasEncontradas(contador + 1);
-                break;
-            }else{
-                ahorcado.setJugadasMaximas(jugadasMaximas - 1);
-                break;
+        int i = 0;
+        while(i < ahorcado.getPalabraABuscar().length && noContieneLaLetra){
+            if(ahorcado.getPalabraABuscar()[i] == letra){
+                noContieneLaLetra = false;
             }
+            i++;
         }
-        if(contieneLaLetra){
+        if(noContieneLaLetra){
             System.out.println("La palabra  no contiene la letra");
-        }else System.out.println("La palabra  contiene la letra.");
+            ahorcado.setJugadasMaximas(jugadasMaximas - 1);
+
+        }else {
+            System.out.println("La palabra  contiene la letra.");
+            ahorcado.setCantidadLetrasEncontradas(contador + 1);
+        }
     }
 
     protected void encontradas(Ahorcado ahorcado) {
