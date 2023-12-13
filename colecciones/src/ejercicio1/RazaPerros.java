@@ -1,8 +1,6 @@
 package ejercicio1;
 
-import java.util.ArrayList;
-import java.util.Locale;
-import java.util.Scanner;
+import java.util.*;
 
 /*
 Diseñar un programa que lea y guarde razas de perros en un ArrayList de tipo
@@ -20,6 +18,7 @@ public class RazaPerros {
         Scanner sc = new Scanner(System.in).useDelimiter("\n");
         ArrayList <String> perros = new ArrayList<>();
         char respuesta;
+        String razaAElimnar;
         do {
             System.out.println("Ingrese la raza del perro");
             perros.add(sc.next());
@@ -29,4 +28,18 @@ public class RazaPerros {
         return perros;
     }
 
+    public void buscarPerro(ArrayList<String>perros) {
+        Scanner sc = new Scanner(System.in).useDelimiter("\n");
+        System.out.println("Ingrese la raza de perro que desea buscar. ");
+        String perroAbuscar = sc.next();
+        Iterator<String> iterator = perros.iterator();
+        while (iterator.hasNext()) {
+            if(iterator.next().equals(perroAbuscar)){
+                iterator.remove();
+            }
+        }
+        for(String perro: perros){
+            System.out.println(perro);
+        }
+    }
 }
