@@ -62,7 +62,7 @@ public class Main {
             System.out.println("Ingrese el codigo postal de la ciudad: ");
             Integer codigoPostal = sc.nextInt();
             if(eliminarCity.containsKey(codigoPostal)){
-                eliminarCity.remove(codigoPostal);,
+                eliminarCity.remove(codigoPostal);
             }else{
                 System.out.println("No se encuentra el codigo postal ingresado");
             }
