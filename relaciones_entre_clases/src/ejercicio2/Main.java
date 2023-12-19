@@ -3,11 +3,9 @@ package ejercicio2;
 import ejercicio2.entidades.Juego;
 import ejercicio2.entidades.Jugador;
 import ejercicio2.entidades.RevolverDeAgua;
-import ejercicio2.servicios.JuegoServicio;
-import ejercicio2.servicios.JugadorServicio;
-import ejercicio2.servicios.RevolverDeAguaService;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /*
  Realizar el juego de la ruleta rusa de agua en Java. Como muchos saben, el juego se
@@ -45,12 +43,22 @@ Pensar la lógica necesaria para realizar esto, usando los atributos de la clase
  */
 public class Main {
     public static void main(String[]args){
-        JuegoServicio juegoService = new JuegoServicio();
-        JugadorServicio jugadorServicio = new JugadorServicio();
-        ArrayList<Jugador> jugadores = new ArrayList<>();
-        RevolverDeAguaService revolverDeAguaService = new RevolverDeAguaService();
-        RevolverDeAgua revolver = revolverDeAguaService.llenarRevolver();
-        Juego juego = juegoService.llenarJuego(jugadorServicio, revolver, jugadores, revolverDeAguaService);
-        System.out.println(juego);
+
+        Juego juego = new Juego();
+        RevolverDeAgua revolverDeAgua = new RevolverDeAgua();
+        juego.llenarJuego(crearJugadores(), revolverDeAgua);
+    }
+    public static ArrayList<Jugador> crearJugadores() {
+        Random random = new Random();
+        ArrayList<Jugador>jugadors = new ArrayList<>();
+        int cantidadDeJugadores = random.nextInt(2, 6);
+        String[] nombres = {"Esteban", "Alberto", "Roland", "Justo", "Rene", "Petoto"};
+        for (int i = 0; i < cantidadDeJugadores; i++) {
+            Jugador jugador = new Jugador();
+            jugador.setId(i + 1);
+            jugador.setNombre(nombres[i] + " " + jugador.getId());
+            jugadors.add(jugador);
+        }
+        return jugadors;
     }
 }
