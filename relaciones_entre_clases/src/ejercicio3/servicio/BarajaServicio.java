@@ -28,7 +28,10 @@ public class BarajaServicio {
         Baraja baraja = new Baraja();
         ArrayList<Carta> cartas = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
-            for (int j = 1; j <= 10; j++) {
+            for (int j = 1; j <= 12; j++) {
+                if (j == 8 || j == 9) {
+                    continue;
+                }
                 Carta carta = new Carta();
                 Palo[] palo = Palo.values();
                 carta.setNumero(j);
