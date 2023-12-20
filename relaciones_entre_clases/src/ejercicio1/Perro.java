@@ -1,7 +1,6 @@
 package ejercicio1;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Objects;
 
 public class Perro {
     private String nombre;
@@ -54,11 +53,11 @@ public String getNombre() {
 
     @Override
     public String toString() {
-        int contador = 0;
-        return "Perro: " + contador +
-                "nombre: " + nombre + '\'' +
-                ", edad: " + edad +
-                ", tamanho: " + tamanho + '\'' +
-                ", raza: " + raza;
+        return "Perro: " +
+                "\nNombre: " + nombre +
+                ", Edad: " + edad +
+                ", Tamanho: " + tamanho +
+                ", Raza: " + raza;
     }
+
 }

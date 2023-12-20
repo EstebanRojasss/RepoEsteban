@@ -1,6 +1,5 @@
-package ejercicio3;
+package ejercicio3.entidades;
 
-import ejercicio3.entidades.Baraja;
 import ejercicio3.servicio.BarajaServicio;
 
 import java.util.Scanner;
@@ -23,7 +22,7 @@ ninguna indicárselo al usuario
 • mostrarBaraja(): muestra todas las cartas hasta el final. Es decir, si se saca una
 carta y luego se llama al método, este no mostrara esa primera carta.
  */
-public class Main {
+public class BarajaPrincipal {
     public static void main(String [] args){
         Scanner sc =new Scanner(System.in);
         BarajaServicio barajaServicio = new BarajaServicio();

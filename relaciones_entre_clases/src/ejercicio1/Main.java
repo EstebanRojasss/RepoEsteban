@@ -1,6 +1,7 @@
 package ejercicio1;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
 
 /*
@@ -10,21 +11,22 @@ Persona con atributos: nombre, apellido, edad, documento y Perro.
 Ahora deberemos en el main crear dos Personas y dos Perros. Después, vamos a tener
 que pensar la lógica necesaria para asignarle a cada Persona un Perro y por ultimo,
 mostrar desde la clase Persona, la información del Perro y de la Persona.
+Ahora se debe realizar unas mejoras al ejercicio de Perro y Persona. Nuestro programa
+va a tener que contar con muchas personas y muchos perros. El programa deberá
+preguntarle a cada persona, que perro según su nombre, quiere adoptar. Dos personas
+no pueden adoptar al mismo perro, si la persona eligió un perro que ya estaba adoptado,
+se le debe informar a la persona.
+Una vez que la Persona elige el Perro se le asigna, al final deberemos mostrar todas las
+personas con sus respectivos perros
  */
 public class Main {
     public static void main(String[]args){
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in).useDelimiter("\n");
+
         PersonaServicio personaServicio = new PersonaServicio();
-        ArrayList<Persona>personas = personaServicio.crearPersona();
         PerroServicio perroServicio = new PerroServicio();
-        ArrayList<Perro>perros = perroServicio.crearPerro();
-        System.out.println("Ingrese el perro que desea adoptar: ");
-        System.out.println("Perros disponibles ");
-        for(int i = 0 ; i < perros.size(); i++){
-            System.out.println(perros.iterator().next());
-        }
-
-
-
+        ArrayList<Perro>opcionesDePerros = perroServicio.crearPerro();
+        ArrayList<Persona>personas = personaServicio.crearPersona(sc, opcionesDePerros);
+        System.out.println(personas);
     }
 }

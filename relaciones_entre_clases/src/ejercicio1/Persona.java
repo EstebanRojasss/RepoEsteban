@@ -1,22 +1,25 @@
 package ejercicio1;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+
 public class Persona {
     private String nombre;
     private String apellido;
     private int edad;
     private long documento;
-    private Perro perro;
+    private ArrayList<Perro> perro;
 
-    public Persona(String nombre, String apellido, int edad, long documento, Perro perro) {
+    public Persona() {
+
+    }
+
+    public Persona(String nombre, String apellido, int edad, long documento, ArrayList<Perro> perro) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
         this.documento = documento;
         this.perro = perro;
-    }
-
-    public Persona() {
-
     }
 
     public String getNombre() {
@@ -51,11 +54,22 @@ public class Persona {
         this.documento = documento;
     }
 
-    public Perro getPerro() {
+    public ArrayList<Perro> getPerro() {
         return perro;
     }
 
-    public void setPerro(Perro perro) {
+    public void setPerro(ArrayList<Perro> perro) {
         this.perro = perro;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", edad=" + edad +
+                ", documento=" + documento +
+                ", perro=" + perro +
+                '}';
     }
 }
