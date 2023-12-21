@@ -32,8 +32,8 @@ public class SalaServicio {
             Espectador espectador = new Espectador();
             String[] nombres = {"Esteban", "Rene", "Yayu", "Lina", "Prenda", "Piter"};
             espectador.setNombre(nombres[random.nextInt(nombres.length)]);
-            espectador.setEdad(90);
-            espectador.setDineroDisponible(600);
+            espectador.setEdad(random.nextInt(90));
+            espectador.setDineroDisponible(random.nextDouble(100, 600));
             sala.setEspectador(espectador);
             boolean yaNoHayAsientos = false;
                     int fila;
@@ -72,8 +72,9 @@ public class SalaServicio {
 
 
     public void mostrarDatosDeAsiento(Sala sala, Scanner sc) {
-        System.out.println("Ingrese el asiento que desea buscar");
+        System.out.println("Ingrese el numero de asiento que desea buscar: ");
         int numeroAsiento = sc.nextInt();
+        System.out.println("Ingrese la letra de la fila: ");
         char letraAsiento = sc.next().charAt(0);
         System.out.println(sala.getAsientos()[sala.getAsientos().length - numeroAsiento][letraAsiento - 'A'].getEspectador());
     }
@@ -82,7 +83,7 @@ public class SalaServicio {
     public void datosDeSala(Sala sala) {
         for (int i = 0; i < sala.getAsientos().length; i++) {
             for (int j = 0; j < sala.getAsientos()[0].length; j++) {
-                System.out.print("[" + sala.getAsientos()[i][j].getEspectador().getNombre() + "]");
+                System.out.print("[" + sala.getAsientos()[i][j].getEspectador()+ "]");
             }
             System.out.println();
         }
@@ -91,7 +92,11 @@ public class SalaServicio {
     public void mostrarCine(Asiento[][] asientos) {
         for (int i = 0; i < asientos.length; i++) {
             for (int j = 0; j < asientos[0].length; j++) {
+                if(asientos[i][j].isDesocupado()){
                 System.out.print("[" + asientos[i][j] + "]");
+                }else{
+                    System.out.print("["+asientos[i][j]+"X]");
+                }
             }
             System.out.println();
         }

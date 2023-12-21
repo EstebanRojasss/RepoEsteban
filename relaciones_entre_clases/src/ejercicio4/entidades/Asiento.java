@@ -53,7 +53,6 @@ public class Asiento {
     public String toString() {
         return "" +
                  numero +
-                 letra+
-                desocupado;
+                 letra;
     }
 }
