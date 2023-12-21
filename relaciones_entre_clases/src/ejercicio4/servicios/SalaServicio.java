@@ -25,11 +25,17 @@ public class SalaServicio {
         return sala;
     }
 
-    public void ingresarEspectadores(Sala sala, Espectador espectador) {
+    public  void ingresarEspectadores(Sala sala) {
         Random random = new Random();
-        boolean yaNoHayAsientos = false;
-            for (int i = 0; i < sala.getAsientos().length; i++) {
-                for (int j = 0; j < sala.getAsientos()[0].length; j++) {
+        int cantidadEspectadores = random.nextInt(20, 40);
+        for (int k = 0; k < cantidadEspectadores; k++) {
+            Espectador espectador = new Espectador();
+            String[] nombres = {"Esteban", "Rene", "Yayu", "Lina", "Prenda", "Piter"};
+            espectador.setNombre(nombres[random.nextInt(nombres.length)]);
+            espectador.setEdad(90);
+            espectador.setDineroDisponible(600);
+            sala.setEspectador(espectador);
+            boolean yaNoHayAsientos = false;
                     int fila;
                     int columna;
                     do {
@@ -39,17 +45,15 @@ public class SalaServicio {
                             yaNoHayAsientos = true;
                             break;
                         }
-
                     } while (!sala.getAsientos()[fila][columna].isDesocupado());
                     if (espectador.getDineroDisponible() >= sala.getPrecioEntrada()
                             && espectador.getEdad() >= sala.getPelicula().getEdadMinima()) {
                         sala.getAsientos()[fila][columna].setEspectador(espectador);
                         sala.getAsientos()[fila][columna].setDesocupado(false);
                     }
-                }
+            if (yaNoHayAsientos) {
+                System.out.println("Ya no hay asientos disponibles");
             }
-        if (yaNoHayAsientos) {
-            System.out.println("Ya no hay asientos disponibles");
         }
     }
 
@@ -63,20 +67,7 @@ public class SalaServicio {
         pelicula.setDuracion(random.nextInt(1, 4));
         pelicula.setEdadMinima(random.nextInt(18));
         sala.setPelicula(pelicula);
-    }
 
-    public  Espectador crearEspectador(Sala sala) {
-        Random random = new Random();
-        int cantidadEspectadores = random.nextInt(10, 40);
-        for(int k = 0 ; k < cantidadEspectadores; k++) {
-            Espectador espectador = new Espectador();
-            String[] nombres = {"Esteban", "Rene", "Yayu", "Lina", "Prenda", "Piter"};
-            espectador.setNombre(nombres[random.nextInt(nombres.length)]);
-            espectador.setEdad(random.nextInt(20));
-            espectador.setDineroDisponible(random.nextDouble(600));
-            sala.setEspectador(espectador);
-            return espectador;
-        }
     }
 
 

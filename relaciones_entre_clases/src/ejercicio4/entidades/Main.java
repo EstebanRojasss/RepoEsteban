@@ -38,8 +38,7 @@ public class Main {
         SalaServicio salaServicio = new SalaServicio();
         Sala sala = salaServicio.generarSala();
         salaServicio.registrarPelicula(sala);
-        salaServicio.crearEspectador(sala);
-
+        salaServicio.ingresarEspectadores(sala);
         int menu;
         do{
             System.out.println("MENU DE CINE");
