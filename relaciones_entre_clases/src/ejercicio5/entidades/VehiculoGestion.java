@@ -79,4 +79,14 @@ public class VehiculoGestion {
     public void setTipoDeAuto(TIPODEAUTOMOVIL tipoDeAuto) {
         this.tipoDeAuto = tipoDeAuto;
     }
+
+    @Override
+    public String toString() {
+        return "Vehiculo " +
+                "\nmarca: " + marca +
+                ", modelo: " + modelo +
+                ", anho: " + anho +
+                ", chasis: " + chasis  +
+                ", color: " + color ;
+    }
 }

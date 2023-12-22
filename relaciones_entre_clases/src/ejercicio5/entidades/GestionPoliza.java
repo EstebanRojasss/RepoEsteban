@@ -3,14 +3,15 @@ package ejercicio5.entidades;
 import ejercicio5.enums.FORMAPAGO;
 import ejercicio5.enums.TIPOCOBERTURA;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public class GestionPoliza {
     private ClienteGestion cliente;
     private VehiculoGestion vehiculo;
     private int numeroPoliza;
-    private Date fechaInicio;
-    private Date fechaFin;
+    private LocalDate fechaInicio;
+    private LocalDate fechaFin;
     private int cantidadCuotas;
     private FORMAPAGO formaPago;
     private double montoTotalAsegurado;
@@ -22,7 +23,7 @@ public class GestionPoliza {
     public GestionPoliza() {
     }
 
-    public GestionPoliza(ClienteGestion cliente, VehiculoGestion vehiculo, int numeroPoliza, Date fechaInicio, Date fechaFin, int cantidadCuotas, FORMAPAGO formaPago, double montoTotalAsegurado, boolean contraGranizo, double montoMaximoGranizo, TIPOCOBERTURA tipoCobertura) {
+    public GestionPoliza(ClienteGestion cliente, VehiculoGestion vehiculo, int numeroPoliza, LocalDate fechaInicio, LocalDate fechaFin, int cantidadCuotas, FORMAPAGO formaPago, double montoTotalAsegurado, boolean contraGranizo, double montoMaximoGranizo, TIPOCOBERTURA tipoCobertura) {
         this.cliente = cliente;
         this.vehiculo = vehiculo;
         this.numeroPoliza = numeroPoliza;
@@ -60,19 +61,19 @@ public class GestionPoliza {
         this.numeroPoliza = numeroPoliza;
     }
 
-    public Date getFechaInicio() {
+    public LocalDate getFechaInicio() {
         return fechaInicio;
     }
 
-    public void setFechaInicio(Date fechaInicio) {
+    public void setFechaInicio(LocalDate fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
-    public Date getFechaFin() {
+    public LocalDate getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(Date fechaFin) {
+    public void setFechaFin(LocalDate fechaFin) {
         this.fechaFin = fechaFin;
     }
 
@@ -122,5 +123,21 @@ public class GestionPoliza {
 
     public void setTipoCobertura(TIPOCOBERTURA tipoCobertura) {
         this.tipoCobertura = tipoCobertura;
+    }
+
+    @Override
+    public String toString() {
+        return "La tercera Seguros" +
+                "Cliente: " + cliente +
+                "\nvehiculo: " + vehiculo +
+                "\nnumeroPoliza: " + numeroPoliza +
+                "\nfechaInicio: " + fechaInicio +
+                "\nfechaFin: " + fechaFin +
+                "\ncantidadCuotas: " + cantidadCuotas +
+                "\nformaPago: " + formaPago +
+                "\nmontoTotalAsegurado: " + montoTotalAsegurado +
+                "\ncontraGranizo: " + contraGranizo +
+                "\nmontoMaximoGranizo: " + montoMaximoGranizo +
+                "\ntipoCobertura: " + tipoCobertura ;
     }
 }

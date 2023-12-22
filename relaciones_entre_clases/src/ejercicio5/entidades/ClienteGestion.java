@@ -69,4 +69,8 @@ public class ClienteGestion {
         this.telefono = telefono;
     }
 
+    @Override
+    public String toString() {
+        return "Cliente: " + "nombre: " + nombre ;
+    }
 }

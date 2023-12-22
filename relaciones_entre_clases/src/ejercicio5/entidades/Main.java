@@ -1,4 +1,11 @@
 package ejercicio5.entidades;
+
+import ejercicio5.servicios.GestionClienteServicio;
+import ejercicio5.servicios.GestionCuotaServicio;
+import ejercicio5.servicios.GestionDePolizaServicio;
+
+import java.util.Scanner;
+
 /*
 Ha llegado el momento de poner de prueba tus conocimientos. Para te vamos a contar
 que te ha contratado “La Tercera Seguros”, una empresa aseguradora que brinda a sus
@@ -23,5 +30,9 @@ monto total de la cuota, si está o no pagada, fecha de vencimiento, forma de pa
 (efectivo, transferencia, etc.).
  */
 public class Main {
-
+public static void main(String[]args){
+    Scanner sc = new Scanner(System.in);
+    GestionDePolizaServicio gestionPolizas = new GestionDePolizaServicio();
+    gestionPolizas.sistemaDePoliza(sc);
+}
 }
