@@ -44,9 +44,8 @@ public class Main {
             System.out.println("MENU DE CINE");
             System.out.println("1. Mostrar sala");
             System.out.println("2. Mostrar datos de asiento");
-            System.out.println("3. Datos de la sala");
-            System.out.println("4. Mostrar datos de pelicula");
-            System.out.println("5. SALIR DEL MENU");
+            System.out.println("3. Mostrar datos de pelicula");
+            System.out.println("4. SALIR DEL MENU");
             menu = sc.nextInt();
             switch (menu){
                 case 1:
@@ -56,19 +55,16 @@ public class Main {
                     salaServicio.mostrarDatosDeAsiento(sala, sc);
                     break;
                     case 3:
-                        salaServicio.datosDeSala(sala);
-                    break;
-                    case 4:
                         System.out.println(sala.getPelicula());
                     break;
-                    case 5:
+                    case 4:
                         System.out.println("Que tenga un buen dia");
                     break;
                 default:
                     System.out.println("Ha ocurrido un error");
                     break;
             }
-        }while(menu != 5);
+        }while(menu != 4);
 
     }
 }

@@ -93,7 +93,7 @@ public class SalaServicio {
         for (int i = 0; i < asientos.length; i++) {
             for (int j = 0; j < asientos[0].length; j++) {
                 if(asientos[i][j].isDesocupado()){
-                System.out.print("[" + asientos[i][j] + "]");
+                System.out.print("[" + asientos[i][j] + " ]");
                 }else{
                     System.out.print("["+asientos[i][j]+"X]");
                 }
