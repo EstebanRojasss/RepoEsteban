@@ -1,7 +1,5 @@
 package ejercicio6.entidades;
 
-import ejercicio6.servicios.SimuladorServicio;
-
 import java.util.ArrayList;
 
 /*
@@ -41,10 +39,10 @@ continuación, mostrar los 5 facilitadores y los 5 facilitadores suplentes
  */
 public class Main {
     public static void main(String[]args){
-        SimuladorServicio simuladorServicio = new SimuladorServicio();
-        ArrayList<Alumno>alumnos = simuladorServicio.listaAlumnos();
-        simuladorServicio.mostrarListado(alumnos);
+       Simulador simulador = new Simulador();
+        ArrayList<Alumno>alumnos = simulador.listaAlumnos();
+        simulador.mostrarListado(alumnos);
         System.out.println(" ");
-        simuladorServicio.votacion(alumnos);
+        simulador.votacion(alumnos);
     }
 }
