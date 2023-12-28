@@ -28,7 +28,7 @@ public class GestionCuotaServicio {
             gestionCuota.setMontoTotalCuota(gestionPoliza.getMontoTotalAsegurado()
                     - gestionCuota.getMontoTotalCuota());
         }while(gestionCuota.getNumeroCuota() == 0);
-        System.out.println(gestionCuota.);
+        System.out.println(gestionCuota);
     }
 
 
