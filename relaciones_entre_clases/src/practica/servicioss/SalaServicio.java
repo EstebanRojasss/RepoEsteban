@@ -29,7 +29,7 @@ public class SalaServicio {
         Random random = new Random();
         String[] directores = {"Nivea", "Termo", "Guampa", "Vaso", "PC", "Teclado", "Ventilador", " Mesa", "Desodorante", "Pulsera"};
         String[] titulos = {"Shrek", "Stori boris", "Batman", "Spiderman", "Django", "Fight Club", "Interestellar", "Nacho Libre"
-                , "Van Hellsing", "EL padrino", "LOTR", "Harry Potter"};
+                , "Van Hellsing", "El padrino", "LOTR", "Harry Potter"};
         pelicula.setDirector(directores[random.nextInt(directores.length)]);
         pelicula.setTitulo(titulos[random.nextInt(titulos.length)]);
         pelicula.setEdadMinima(10);
