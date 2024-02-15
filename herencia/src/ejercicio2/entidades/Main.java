@@ -1,4 +1,4 @@
-package ejercicio2;
+package ejercicio2.entidades;
 /*
 Crear una superclase llamada Electrodoméstico con los siguientes atributos:
 precio, color, consumo energético (letras entre A y F) y peso.
@@ -20,7 +20,6 @@ electrodoméstico, también llama los métodos para comprobar el color y el
 consumo. Al precio se le da un valor base de $1000.
 • Método precioFinal(): según el consumo energético y su tamaño, aumentará
 el valor del precio. Esta es la lista de precios
-
 A continuación se debe crear una subclase llamada Lavadora, con el atributo
 carga, además de los atributos heredados.
 Los constructores que se implementarán serán:
