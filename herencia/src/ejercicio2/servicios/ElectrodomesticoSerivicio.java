@@ -1,26 +1,9 @@
-package ejercicio2.entidades;
+package ejercicio2.servicios;
 
-import ejercicio2.servicios.ElectrodomesticoSerivicio;
-
-import java.util.Scanner;
-
+import ejercicio2.enums.COLOR_ELECTRODOMESTICO;
+import ejercicio2.enums.CONSUMO_ENERGETICO;
 /*
-Crear una superclase llamada Electrodoméstico con los siguientes atributos:
-precio, color, consumo energético (letras entre A y F) y peso.
-Los constructores que se deben implementar son los siguientes:
-• Un constructor vacío.
-• Un constructor con todos los atributos pasados por parámetro.
-Los métodos a implementar son:
-• Métodos getters y setters de todos los atributos.
-• Método comprobarConsumoEnergetico(char letra): comprueba que la letra
-es correcta, sino es correcta usara la letra F por defecto. Este método se debe
-invocar al crear el objeto y no será visible.
-• Método comprobarColor(String color): comprueba que el color es correcto, y
-si no lo es, usa el color blanco por defecto. Los colores disponibles para los
-electrodomésticos son blanco, negro, rojo, azul y gris. No importa si el nombre
-está en mayúsculas o en minúsculas. Este método se invocará al crear el
-objeto y no será visible.
-• Metodo crearElectrodomestico(): le pide la información al usuario y llena el
+ Metodo crearElectrodomestico(): le pide la información al usuario y llena el
 electrodoméstico, también llama los métodos para comprobar el color y el
 consumo. Al precio se le da un valor base de $1000.
 • Método precioFinal(): según el consumo energético y su tamaño, aumentará
@@ -63,13 +46,30 @@ Finalmente, en el main debemos realizar lo siguiente:
 Vamos a crear una Lavadora y un Televisor y llamar a los métodos necesarios
 para mostrar el precio final de los dos electrodomésticos.
  */
-public class Main {
-    public static void main(String []args){
-        Scanner sc = new Scanner(System.in);
-        ElectrodomesticoSerivicio electrodomesticoSerivicio = new ElectrodomesticoSerivicio();
-        System.out.println("Ingrese el color del electrodomestico: ");
-        String color  = sc.next();
-        System.out.println(electrodomesticoSerivicio.comprobarColor(color));
-
+public class ElectrodomesticoSerivicio {
+    private static char comprobarConsumoEnergetico(char letra) {
+        CONSUMO_ENERGETICO[] nivelesDeCon = CONSUMO_ENERGETICO.values();
+        int contador = 0;
+        while (contador < nivelesDeCon.length) {
+            if (nivelesDeCon[contador].toString().charAt(0) == letra) {
+                return letra;
+            }
+            contador++;
+        }
+        return 'F';
     }
+
+    private static String comprobarColor(String color) {
+        COLOR_ELECTRODOMESTICO[] colores = COLOR_ELECTRODOMESTICO.values();
+        int contador = 0;
+        while (contador < colores.length) {
+            if (colores[contador].toString().equalsIgnoreCase(color)) {
+                return color.toUpperCase();
+            }
+            contador++;
+        }
+        return COLOR_ELECTRODOMESTICO.BLANCO.toString();
+    }
+
+    public crearElectrodomestico()
 }
