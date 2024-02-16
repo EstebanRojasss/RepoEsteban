@@ -52,7 +52,7 @@ Vamos a crear una Lavadora y un Televisor y llamar a los métodos necesarios
 para mostrar el precio final de los dos electrodomésticos.
  */
 public class ElectrodomesticoSerivicio {
-    public CONSUMO_ENERGETICO comprobarConsumoEnergetico(char letra) {
+    private CONSUMO_ENERGETICO comprobarConsumoEnergetico(char letra) {
         CONSUMO_ENERGETICO[] nivelesDeCon = CONSUMO_ENERGETICO.values();
         int contador = 0;
         while (contador < nivelesDeCon.length) {
@@ -65,7 +65,7 @@ public class ElectrodomesticoSerivicio {
         return CONSUMO_ENERGETICO.F;
     }
 
-    public COLOR_ELECTRODOMESTICO comprobarColor(String colorIngresado) {
+    private COLOR_ELECTRODOMESTICO comprobarColor(String colorIngresado) {
         COLOR_ELECTRODOMESTICO[] colores = COLOR_ELECTRODOMESTICO.values();
         int contador = 0;
         while (contador < colores.length) {
@@ -99,6 +99,10 @@ public class ElectrodomesticoSerivicio {
         System.out.print("Ingresar tipo: ");
         char tipoConsumoo = sc.next().charAt(0);
         electrodomestico.setConsumoEnergetico(comprobarConsumoEnergetico(tipoConsumoo));
+        System.out.println("Ingrese el peso del electrodomestico: ");
+        double pesoElectrodomestico = sc.nextDouble();
+        electrodomestico.setPeso(pesoElectrodomestico);
+        precioFinal(electrodomestico);
         return electrodomestico;
     }
 
@@ -106,10 +110,39 @@ public class ElectrodomesticoSerivicio {
     Método precioFinal(): según el consumo energético y su tamaño, aumentará
     el valor del precio. Esta es la lista de precios
      */
-    public void precioFinal(Electrodomestico electrodomestico) {
-        switch (electrodomestico.getConsumoEnergetico()){
-
+    public void precioFinal(Electrodomestico electroD) {
+        char letra = electroD.getConsumoEnergetico().name().charAt(0);
+        switch (letra) {
+            case 'A':
+                electroD.setPrecio(electroD.getPrecio() + CONSUMO_ENERGETICO.A.getPrecios());
+                break;
+            case 'B':
+                electroD.setPrecio(electroD.getPrecio() + CONSUMO_ENERGETICO.B.getPrecios());
+                break;
+            case 'C':
+                electroD.setPrecio(electroD.getPrecio() + CONSUMO_ENERGETICO.C.getPrecios());
+                break;
+            case 'D':
+                electroD.setPrecio(electroD.getPrecio() + CONSUMO_ENERGETICO.D.getPrecios());
+                break;
+            case 'E':
+                electroD.setPrecio(electroD.getPrecio() + CONSUMO_ENERGETICO.E.getPrecios());
+                break;
+            case 'F':
+                electroD.setPrecio(electroD.getPrecio() + CONSUMO_ENERGETICO.F.getPrecios());
+                break;
+        }
+        if(electroD.getPeso()>0 && electroD.getPeso()<20){
+            electroD.setPrecio(electroD.getPrecio() + 100);
+        }else if(electroD.getPeso()>19 && electroD.getPeso() < 50){
+            electroD.setPrecio(electroD.getPrecio() + 500);
+        }else if(electroD.getPeso() > 49 && electroD.getPeso() < 80){
+            electroD.setPrecio(electroD.getPrecio() + 800);
+        }else {
+            electroD.setPrecio(electroD.getPrecio() + 1000);
         }
     }
+
+
 }
 

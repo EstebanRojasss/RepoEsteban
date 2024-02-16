@@ -53,4 +53,13 @@ public class Electrodomestico {
     public void setPeso(double peso) {
         this.peso = peso;
     }
+
+    @Override
+    public String toString() {
+        return "Electrodomestico: " +
+                "  Precio: " + precio +
+                "  Color: " + color +
+                "  Consumo energetico: " + consumoEnergetico +
+                "  Peso: " + peso;
+    }
 }

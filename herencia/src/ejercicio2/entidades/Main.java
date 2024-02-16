@@ -67,11 +67,7 @@ public class Main {
     public static void main(String []args){
         Scanner sc = new Scanner(System.in);
         ElectrodomesticoSerivicio electrodomesticoSerivicio = new ElectrodomesticoSerivicio();
-        System.out.println("Ingrese el color del electrodomestico: ");
-        String color  = sc.next();
-        System.out.println(electrodomesticoSerivicio.comprobarColor(color));
-        System.out.println("Ingrese el consumo del electrodomestico");
-        char consumo = sc.next().charAt(0);
-        System.out.println(electrodomesticoSerivicio.comprobarConsumoEnergetico(consumo));
+        Electrodomestico electrodomestico = electrodomesticoSerivicio.crearElectrodomestico();
+        System.out.println(electrodomestico);
     }
 }
