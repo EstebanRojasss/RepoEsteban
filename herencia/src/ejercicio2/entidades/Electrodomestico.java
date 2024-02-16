@@ -7,15 +7,15 @@ import java.util.Scanner;
 
 public class Electrodomestico {
     protected double precio;
-    protected String color;
-    protected char consumoEnergetico;
+    protected COLOR_ELECTRODOMESTICO color;
+    protected CONSUMO_ENERGETICO consumoEnergetico;
     protected double peso;
 
     public Electrodomestico() {
 
     }
 
-    public Electrodomestico(double precio, String color, char consumoEnergetico, double peso) {
+    public Electrodomestico(double precio, COLOR_ELECTRODOMESTICO color, CONSUMO_ENERGETICO consumoEnergetico, double peso) {
         this.precio = precio;
         this.color = color;
         this.consumoEnergetico = consumoEnergetico;
@@ -30,19 +30,19 @@ public class Electrodomestico {
         this.precio = precio;
     }
 
-    public String getColor() {
+    public COLOR_ELECTRODOMESTICO getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(COLOR_ELECTRODOMESTICO color) {
         this.color = color;
     }
 
-    public char getConsumoEnergetico() {
+    public CONSUMO_ENERGETICO getConsumoEnergetico() {
         return consumoEnergetico;
     }
 
-    public void setConsumoEnergetico(char consumoEnergetico) {
+    public void setConsumoEnergetico(CONSUMO_ENERGETICO consumoEnergetico) {
         this.consumoEnergetico = consumoEnergetico;
     }
 
@@ -53,5 +53,4 @@ public class Electrodomestico {
     public void setPeso(double peso) {
         this.peso = peso;
     }
-
 }

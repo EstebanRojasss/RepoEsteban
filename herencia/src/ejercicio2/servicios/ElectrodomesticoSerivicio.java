@@ -1,7 +1,12 @@
 package ejercicio2.servicios;
 
+import ejercicio2.entidades.Electrodomestico;
 import ejercicio2.enums.COLOR_ELECTRODOMESTICO;
 import ejercicio2.enums.CONSUMO_ENERGETICO;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
 /*
  Metodo crearElectrodomestico(): le pide la información al usuario y llena el
 electrodoméstico, también llama los métodos para comprobar el color y el
@@ -47,29 +52,64 @@ Vamos a crear una Lavadora y un Televisor y llamar a los métodos necesarios
 para mostrar el precio final de los dos electrodomésticos.
  */
 public class ElectrodomesticoSerivicio {
-    private static char comprobarConsumoEnergetico(char letra) {
+    public CONSUMO_ENERGETICO comprobarConsumoEnergetico(char letra) {
         CONSUMO_ENERGETICO[] nivelesDeCon = CONSUMO_ENERGETICO.values();
         int contador = 0;
         while (contador < nivelesDeCon.length) {
-            if (nivelesDeCon[contador].toString().charAt(0) == letra) {
-                return letra;
+            char c = nivelesDeCon[contador].toString().charAt(0);
+            if (c == Character.toUpperCase(letra)) {
+                return nivelesDeCon[contador];
             }
             contador++;
         }
-        return 'F';
+        return CONSUMO_ENERGETICO.F;
     }
 
-    private static String comprobarColor(String color) {
+    public COLOR_ELECTRODOMESTICO comprobarColor(String colorIngresado) {
         COLOR_ELECTRODOMESTICO[] colores = COLOR_ELECTRODOMESTICO.values();
         int contador = 0;
         while (contador < colores.length) {
-            if (colores[contador].toString().equalsIgnoreCase(color)) {
-                return color.toUpperCase();
+            String colorr = colores[contador].toString();
+            if (colorr.equalsIgnoreCase(colorIngresado)) {
+                return colores[contador];
             }
             contador++;
         }
-        return COLOR_ELECTRODOMESTICO.BLANCO.toString();
+        return COLOR_ELECTRODOMESTICO.BLANCO;
     }
 
-    public crearElectrodomestico()
+    /*
+    Metodo crearElectrodomestico(): le pide la información al usuario y llena el
+    electrodoméstico, también llama los métodos para comprobar el color y el
+    consumo. Al precio se le da un valor base de $1000.
+     */
+    public Electrodomestico crearElectrodomestico() {
+        Scanner sc = new Scanner(System.in).useDelimiter("\n");
+        Electrodomestico electrodomestico = new Electrodomestico();
+        electrodomestico.setPrecio(1000);
+        System.out.println("Ingrese el color del electrodomestico: ");
+        System.out.println("COLORES DISPONIBLES: " +
+                "\n" + Arrays.toString(COLOR_ELECTRODOMESTICO.values()));
+        System.out.print("Ingresar color: ");
+        String color = sc.next();
+        electrodomestico.setColor(comprobarColor(color));
+        System.out.println("Ingrese el tipo de consumo energetico: ");
+        System.out.println("TIPOS: " +
+                "\n" + Arrays.toString(CONSUMO_ENERGETICO.values()));
+        System.out.print("Ingresar tipo: ");
+        char tipoConsumoo = sc.next().charAt(0);
+        electrodomestico.setConsumoEnergetico(comprobarConsumoEnergetico(tipoConsumoo));
+        return electrodomestico;
+    }
+
+    /*
+    Método precioFinal(): según el consumo energético y su tamaño, aumentará
+    el valor del precio. Esta es la lista de precios
+     */
+    public void precioFinal(Electrodomestico electrodomestico) {
+        switch (electrodomestico.getConsumoEnergetico()){
+
+        }
+    }
 }
+

@@ -70,6 +70,8 @@ public class Main {
         System.out.println("Ingrese el color del electrodomestico: ");
         String color  = sc.next();
         System.out.println(electrodomesticoSerivicio.comprobarColor(color));
-
+        System.out.println("Ingrese el consumo del electrodomestico");
+        char consumo = sc.next().charAt(0);
+        System.out.println(electrodomesticoSerivicio.comprobarConsumoEnergetico(consumo));
     }
 }
