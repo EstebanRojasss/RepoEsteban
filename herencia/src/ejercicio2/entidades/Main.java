@@ -1,6 +1,8 @@
 package ejercicio2.entidades;
 
 import ejercicio2.servicios.ElectrodomesticoSerivicio;
+import ejercicio2.servicios.LavadoraServicio;
+import ejercicio2.servicios.TelevisorServicio;
 
 import java.util.Scanner;
 
@@ -66,8 +68,13 @@ para mostrar el precio final de los dos electrodomésticos.
 public class Main {
     public static void main(String []args){
         Scanner sc = new Scanner(System.in);
-        ElectrodomesticoSerivicio electrodomesticoSerivicio = new ElectrodomesticoSerivicio();
-        Electrodomestico electrodomestico = electrodomesticoSerivicio.crearElectrodomestico();
-        System.out.println(electrodomestico);
+        TelevisorServicio televisorServicio = new TelevisorServicio();
+        Televisor televisor = televisorServicio.crearTelevisor();
+        LavadoraServicio lavadoraServicio = new LavadoraServicio();
+        Lavadora lavadora =  lavadoraServicio.crearLavadora();
+
+        System.out.println(televisor);
+        System.out.println(lavadora);
+
     }
 }
