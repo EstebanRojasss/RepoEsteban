@@ -21,7 +21,11 @@ public class TelevisorServicio extends ElectrodomesticoSerivicio{
     Scanner sc = new Scanner(System.in).useDelimiter("\n");
     Random random = new Random();
     public Televisor crearTelevisor(){
-        Televisor televisor = (Televisor) crearElectrodomestico();
+        Electrodomestico electrodomestico = crearElectrodomestico();
+        Televisor televisor = new Televisor();
+        electrodomestico.setPrecio(electrodomestico.getPrecio());
+        electrodomestico.setColor(electrodomestico.getColor());
+        electrodomestico.setConsumoEnergetico(electrodomestico.getConsumoEnergetico());
         int pulgadas = sc.nextInt();
         televisor.setPulgadas(pulgadas);
         televisor.setSintonizadorTDTdispo(random.nextBoolean());
