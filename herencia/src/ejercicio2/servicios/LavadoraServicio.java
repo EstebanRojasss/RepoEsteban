@@ -1,5 +1,6 @@
 package ejercicio2.servicios;
 
+import ejercicio2.entidades.Electrodomestico;
 import ejercicio2.entidades.Lavadora;
 
 import java.util.Scanner;
@@ -16,9 +17,13 @@ condiciones que hemos visto en la clase Electrodoméstico también deben
 afectar al precio.
  */
 public class LavadoraServicio extends ElectrodomesticoSerivicio{
-    Scanner sc = new Scanner(System.in).useDelimiter("\n");
     public Lavadora crearLavadora(){
-        Lavadora lavadora = (Lavadora) crearElectrodomestico();
+        Electrodomestico electrodomestico = crearElectrodomestico();
+        Lavadora lavadora = new Lavadora();
+        lavadora.setPrecio(electrodomestico.getPrecio());
+        lavadora.setColor(electrodomestico.getColor());
+        lavadora.setConsumoEnergetico(electrodomestico.getConsumoEnergetico());
+        lavadora.setPeso(electrodomestico.getPeso());
         System.out.println("Ingrese la carga de la lavadora: ");
         int carga = sc.nextInt();
         lavadora.setCarga(carga);
@@ -30,5 +35,6 @@ public class LavadoraServicio extends ElectrodomesticoSerivicio{
         if(lavadora.getCarga() > 30){
             lavadora.setPrecio(lavadora.getPrecio() + 500);
         }
+        System.out.println("El precio de la lavadora es: " + lavadora.getPrecio());
     }
 }

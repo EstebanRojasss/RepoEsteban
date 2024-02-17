@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class ElectrodomesticoSerivicio {
+    Scanner sc = new Scanner(System.in).useDelimiter("\n");
     private CONSUMO_ENERGETICO comprobarConsumoEnergetico(char letra) {
         CONSUMO_ENERGETICO[] nivelesDeCon = CONSUMO_ENERGETICO.values();
         int contador = 0;
@@ -40,7 +41,6 @@ public class ElectrodomesticoSerivicio {
     consumo. Al precio se le da un valor base de $1000.
      */
     public Electrodomestico crearElectrodomestico() {
-        Scanner sc = new Scanner(System.in).useDelimiter("\n");
         Electrodomestico electrodomestico = new Electrodomestico();
         electrodomestico.setPrecio(1000);
         System.out.println("Ingrese el color del electrodomestico: ");

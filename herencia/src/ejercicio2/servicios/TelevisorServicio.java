@@ -18,14 +18,14 @@ aumentará $500. Recuerda que las condiciones que hemos visto en la clase
 Electrodomestico también deben afectar al precio.
  */
 public class TelevisorServicio extends ElectrodomesticoSerivicio{
-    Scanner sc = new Scanner(System.in).useDelimiter("\n");
-    Random random = new Random();
+
     public Televisor crearTelevisor(){
+        Random random = new Random();
         Electrodomestico electrodomestico = crearElectrodomestico();
         Televisor televisor = new Televisor();
-        electrodomestico.setPrecio(electrodomestico.getPrecio());
-        electrodomestico.setColor(electrodomestico.getColor());
-        electrodomestico.setConsumoEnergetico(electrodomestico.getConsumoEnergetico());
+        televisor.setPrecio(electrodomestico.getPrecio());
+        televisor.setColor(electrodomestico.getColor());
+        televisor.setConsumoEnergetico(electrodomestico.getConsumoEnergetico());
         int pulgadas = sc.nextInt();
         televisor.setPulgadas(pulgadas);
         televisor.setSintonizadorTDTdispo(random.nextBoolean());
@@ -40,5 +40,6 @@ public class TelevisorServicio extends ElectrodomesticoSerivicio{
         if(televisor.isSintonizadorTDTdispo()){
             televisor.setPrecio(televisor.getPrecio() + 500);
         }
+        System.out.println("El precio del televisor es: " + televisor.getPrecio());
     }
 }
