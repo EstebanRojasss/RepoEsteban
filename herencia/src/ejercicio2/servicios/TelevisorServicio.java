@@ -4,8 +4,6 @@ package ejercicio2.servicios;
 import ejercicio2.entidades.Electrodomestico;
 import ejercicio2.entidades.Televisor;
 
-import java.util.Random;
-import java.util.Scanner;
 
 /*
  Método crearTelevisor(): este método llama a crearElectrodomestico() de la

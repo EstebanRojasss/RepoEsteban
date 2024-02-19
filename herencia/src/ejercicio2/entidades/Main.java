@@ -80,7 +80,6 @@ electrodomésticos, 2000 para lavadora y 5000 para televisor.
  */
 public class Main {
     public static void main(String []args){
-        Scanner sc = new Scanner(System.in);
         LavadoraServicio ls = new LavadoraServicio();
         TelevisorServicio ts = new TelevisorServicio();
 

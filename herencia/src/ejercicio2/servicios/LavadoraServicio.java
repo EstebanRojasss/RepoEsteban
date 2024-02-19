@@ -3,7 +3,6 @@ package ejercicio2.servicios;
 import ejercicio2.entidades.Electrodomestico;
 import ejercicio2.entidades.Lavadora;
 
-import java.util.Scanner;
 
 /*
 • Método crearLavadora (): este método llama a crearElectrodomestico() de la
