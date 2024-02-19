@@ -23,23 +23,27 @@ public class TelevisorServicio extends ElectrodomesticoSerivicio{
         Random random = new Random();
         Electrodomestico electrodomestico = crearElectrodomestico();
         Televisor televisor = new Televisor();
-        televisor.setPrecio(electrodomestico.getPrecio());
         televisor.setColor(electrodomestico.getColor());
         televisor.setConsumoEnergetico(electrodomestico.getConsumoEnergetico());
+        System.out.println("Ingrese las pulgadas del televisor: ");
         int pulgadas = sc.nextInt();
         televisor.setPulgadas(pulgadas);
-        televisor.setSintonizadorTDTdispo(random.nextBoolean());
+        televisor.setPeso(electrodomestico.getPeso());
+        televisor.setPrecio(electrodomestico.getPrecio());
+        System.out.println("Desea que el televisor cuente con sintentizador? S/N");
+        char respuesta = sc.next().charAt(0);
+        televisor.setSintonizadorTDTdispo(Character.toUpperCase(respuesta) == 'S');
         return televisor;
     }
 
-    public void precioFinal(Televisor televisor) {
+    public double precioFinal(Televisor televisor) {
         super.precioFinal(televisor);
-        if(televisor.getPulgadas() > 40){
-            televisor.setPrecio(televisor.getPrecio() * 1.30);
+        if(televisor.getPulgadas() >= 40){
+            televisor.setPrecio((televisor.getPrecio() * 1.3));
         }
         if(televisor.isSintonizadorTDTdispo()){
             televisor.setPrecio(televisor.getPrecio() + 500);
         }
-        System.out.println("El precio del televisor es: " + televisor.getPrecio());
+        return televisor.getPrecio();
     }
 }

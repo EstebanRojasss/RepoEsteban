@@ -12,5 +12,4 @@ public enum CONSUMO_ENERGETICO {
         return precios;
     }
 
-
 }

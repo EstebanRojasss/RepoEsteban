@@ -56,8 +56,7 @@ public class Electrodomestico {
 
     @Override
     public String toString() {
-        return "Electrodomestico: " +
-                "  Precio: " + precio +
+        return
                 "  Color: " + color +
                 "  Consumo energetico: " + consumoEnergetico +
                 "  Peso: " + peso;

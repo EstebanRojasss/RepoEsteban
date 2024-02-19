@@ -20,21 +20,21 @@ public class LavadoraServicio extends ElectrodomesticoSerivicio{
     public Lavadora crearLavadora(){
         Electrodomestico electrodomestico = crearElectrodomestico();
         Lavadora lavadora = new Lavadora();
-        lavadora.setPrecio(electrodomestico.getPrecio());
         lavadora.setColor(electrodomestico.getColor());
         lavadora.setConsumoEnergetico(electrodomestico.getConsumoEnergetico());
         lavadora.setPeso(electrodomestico.getPeso());
         System.out.println("Ingrese la carga de la lavadora: ");
         int carga = sc.nextInt();
         lavadora.setCarga(carga);
+        lavadora.setPrecio(electrodomestico.getPrecio());
         return lavadora;
     }
 
-    public void precioFinal(Lavadora lavadora) {
+    public double precioFinal(Lavadora lavadora) {
         super.precioFinal(lavadora);
         if(lavadora.getCarga() > 30){
             lavadora.setPrecio(lavadora.getPrecio() + 500);
         }
-        System.out.println("El precio de la lavadora es: " + lavadora.getPrecio());
+        return lavadora.getPrecio();
     }
 }

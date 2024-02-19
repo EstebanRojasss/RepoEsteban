@@ -58,7 +58,6 @@ public class ElectrodomesticoSerivicio {
         System.out.println("Ingrese el peso del electrodomestico: ");
         double pesoElectrodomestico = sc.nextDouble();
         electrodomestico.setPeso(pesoElectrodomestico);
-        precioFinal(electrodomestico);
         return electrodomestico;
     }
 
@@ -98,7 +97,6 @@ public class ElectrodomesticoSerivicio {
             electroD.setPrecio(electroD.getPrecio() + 1000);
         }
     }
-
 
 }
 

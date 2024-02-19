@@ -68,16 +68,16 @@ para mostrar el precio final de los dos electrodomésticos.
 public class Main {
     public static void main(String []args){
         Scanner sc = new Scanner(System.in);
-        TelevisorServicio ts = new TelevisorServicio();
         LavadoraServicio ls = new LavadoraServicio();
+        TelevisorServicio ts = new TelevisorServicio();
 
         Lavadora lavadora = ls.crearLavadora();
         System.out.println("-----------------------------------");
         Televisor televisor = ts.crearTelevisor();
 
-        ts.precioFinal(televisor);
+        System.out.println("Lavadora: " + " Precio: " + ls.precioFinal(lavadora) + lavadora);
         System.out.println("-----------------------------------");
-        ls.precioFinal(lavadora);
+        System.out.println("Televisor: " + " Precio: " + ts.precioFinal(televisor) + televisor);
 
     }
 }
