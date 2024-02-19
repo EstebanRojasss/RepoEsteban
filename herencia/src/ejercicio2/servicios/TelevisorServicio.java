@@ -20,7 +20,6 @@ Electrodomestico también deben afectar al precio.
 public class TelevisorServicio extends ElectrodomesticoSerivicio{
 
     public Televisor crearTelevisor(){
-        Random random = new Random();
         Electrodomestico electrodomestico = crearElectrodomestico();
         Televisor televisor = new Televisor();
         televisor.setColor(electrodomestico.getColor());
@@ -33,6 +32,9 @@ public class TelevisorServicio extends ElectrodomesticoSerivicio{
         System.out.println("Desea que el televisor cuente con sintentizador? S/N");
         char respuesta = sc.next().charAt(0);
         televisor.setSintonizadorTDTdispo(Character.toUpperCase(respuesta) == 'S');
+        System.out.println(" ");
+        System.out.println("Televisor: " + precioFinal(televisor) + televisor);
+        System.out.println(" ");
         return televisor;
     }
 

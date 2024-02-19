@@ -27,6 +27,8 @@ public class LavadoraServicio extends ElectrodomesticoSerivicio{
         int carga = sc.nextInt();
         lavadora.setCarga(carga);
         lavadora.setPrecio(electrodomestico.getPrecio());
+        System.out.println("Lavadora: " + precioFinal(lavadora) + lavadora);
+        System.out.println("-----------------------------------------------------");
         return lavadora;
     }
 

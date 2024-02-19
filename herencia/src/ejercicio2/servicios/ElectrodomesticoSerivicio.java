@@ -4,6 +4,7 @@ import ejercicio2.entidades.Electrodomestico;
 import ejercicio2.enums.COLOR_ELECTRODOMESTICO;
 import ejercicio2.enums.CONSUMO_ENERGETICO;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -58,6 +59,7 @@ public class ElectrodomesticoSerivicio {
         System.out.println("Ingrese el peso del electrodomestico: ");
         double pesoElectrodomestico = sc.nextDouble();
         electrodomestico.setPeso(pesoElectrodomestico);
+
         return electrodomestico;
     }
 
@@ -97,6 +99,22 @@ public class ElectrodomesticoSerivicio {
             electroD.setPrecio(electroD.getPrecio() + 1000);
         }
     }
+    public void listaElectrods(ArrayList<Electrodomestico>electro){
+        System.out.println("---------------------------------------------------------");
+        for(Electrodomestico electrodomestico : electro){
+            System.out.println(electrodomestico +" "+electrodomestico.getPrecio());
+        }
+        System.out.println("La suma de los precios es: " + sumaDePrecios(electro));
+    }
+
+    public double sumaDePrecios(ArrayList<Electrodomestico>electroD){
+        double sumaPrecios = 0;
+        for(Electrodomestico electrodomestico : electroD){
+            sumaPrecios += electrodomestico.getPrecio();
+        }
+        return sumaPrecios;
+    }
+
 
 }
 

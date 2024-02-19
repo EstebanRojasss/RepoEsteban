@@ -3,7 +3,7 @@ package ejercicio2.entidades;
 import ejercicio2.enums.COLOR_ELECTRODOMESTICO;
 import ejercicio2.enums.CONSUMO_ENERGETICO;
 
-import java.util.Scanner;
+
 
 public class Electrodomestico {
     protected double precio;
