@@ -30,9 +30,6 @@ public class TelevisorServicio extends ElectrodomesticoSerivicio{
         System.out.println("Desea que el televisor cuente con sintentizador? S/N");
         char respuesta = sc.next().charAt(0);
         televisor.setSintonizadorTDTdispo(Character.toUpperCase(respuesta) == 'S');
-        System.out.println(" ");
-        System.out.println("Televisor: " + precioFinal(televisor) + televisor);
-        System.out.println(" ");
         return televisor;
     }
 

@@ -80,17 +80,37 @@ electrodomésticos, 2000 para lavadora y 5000 para televisor.
  */
 public class Main {
     public static void main(String []args){
+        Scanner sc = new Scanner(System.in);
         LavadoraServicio ls = new LavadoraServicio();
         TelevisorServicio ts = new TelevisorServicio();
 
         ArrayList<Electrodomestico> listaElectrodomesticos = new ArrayList<>();
-        for(int i = 0 ; i < 2; i++){
-        Lavadora lavadora = ls.crearLavadora();
-        listaElectrodomesticos.add(lavadora);
-        Televisor televisor = ts.crearTelevisor();
-        listaElectrodomesticos.add(televisor);
+        int menu ;
+        do{
+            System.out.println("1. Agregar lavadora a la lista: ");
+            System.out.println("2. Agregar televisor a la lista: ");
+
+            System.out.println("3. Terminar compra.");
+            menu = sc.nextInt();
+            switch (menu){
+                case 1: listaElectrodomesticos.add(ls.crearLavadora());
+                    break;
+                case 2:listaElectrodomesticos.add(ts.crearTelevisor());
+                    break;
+                case 3:
+                    System.out.println("Datos de la compra:  ");
+                    break;
+            }
+        }while(menu != 3);
+
+        for(Electrodomestico electrodomestico : listaElectrodomesticos){
+            if(electrodomestico instanceof Lavadora lavadora){
+                System.out.println("El precio de la lavadora es : " +ls.precioFinal(lavadora));
+            }else if(electrodomestico instanceof Televisor televisor){
+                System.out.println("El precio del televisor es: " + ts.precioFinal(televisor));
+            }
         }
-        ls.listaElectrods(listaElectrodomesticos);
+        ls.sumaDePrecios(listaElectrodomesticos);
 
 
     }

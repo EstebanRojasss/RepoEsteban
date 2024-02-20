@@ -16,7 +16,7 @@ condiciones que hemos visto en la clase Electrodoméstico también deben
 afectar al precio.
  */
 public class LavadoraServicio extends ElectrodomesticoSerivicio{
-    public Lavadora crearLavadora(){
+    public Lavadora crearLavadora() {
         Electrodomestico electrodomestico = crearElectrodomestico();
         Lavadora lavadora = new Lavadora();
         lavadora.setColor(electrodomestico.getColor());
@@ -26,8 +26,6 @@ public class LavadoraServicio extends ElectrodomesticoSerivicio{
         int carga = sc.nextInt();
         lavadora.setCarga(carga);
         lavadora.setPrecio(electrodomestico.getPrecio());
-        System.out.println("Lavadora: " + precioFinal(lavadora) + lavadora);
-        System.out.println("-----------------------------------------------------");
         return lavadora;
     }
 
