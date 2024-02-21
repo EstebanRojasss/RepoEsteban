@@ -21,7 +21,7 @@ public class ElectrodomesticoService extends Electrodomestico {
         int contador = 0;
         while (contador < consumoEnergetico.length) {
             char letraAComparar = consumoEnergetico[contador].toString().charAt(0);
-            if (Character.toUpperCase(letraAComparar) == letra) {
+            if (letraAComparar == Character.toUpperCase(letra)) {
                 return consumoEnergetico[contador];
             }
             contador++;
@@ -56,23 +56,21 @@ public class ElectrodomesticoService extends Electrodomestico {
      */
     public Electrodomestico crearElectrodomestico() {
         Electrodomestico electrodomestico = new Electrodomestico();
+        System.out.println("**************************************************");
         electrodomestico.setPrecio(1000);
-        System.out.println("\n**************************************************");
-        System.out.println("Ingrese el color del electrodomestico: ");
-        System.out.println("OPCIONES DISPONIBLES");
+        System.out.println("OPCIONES DE COLOR");
         System.out.println(Arrays.toString(COLORES____.values()));
         System.out.print("Ingrese el color: ");
         String colorAINgresar = sc.next();
         electrodomestico.setColor(comprobarColor(colorAINgresar));
-        System.out.println("\n**************************************************");
-        System.out.println("Ingrese el consumo del electrodomestico: ");
-        System.out.println("OPCIONES DISPONIBLES");
+        System.out.println("**************************************************");
+        System.out.println("OPCIONES DE CONSUMO");
         System.out.println(Arrays.toString(TIPO_CONSUMO.values()));
-        System.out.print("Ingrese el consumo: ");
+        System.out.print("Ingrese el tipo de consumo: ");
         char letraAIngresar = sc.next().charAt(0);
         electrodomestico.setConsumoEnergetico(comprobarConsumoEnergetico(letraAIngresar));
-        System.out.println("\n**************************************************");
-        System.out.println("Ingrese el peso del elctrodomestico: ");
+        System.out.println("**************************************************");
+        System.out.print("Ingrese el peso:  ");
         int pesoAIngresar = sc.nextInt();
         electrodomestico.setPeso(pesoAIngresar);
         return electrodomestico;
@@ -82,9 +80,36 @@ public class ElectrodomesticoService extends Electrodomestico {
       el valor del precio. Esta es la lista de precios
      */
 
-    public void precioFInal(Electrodomestico electrodomestico){
-
+    public void precioFinal(Electrodomestico electrodomestico) {
+        char letraAComprobar = electrodomestico.getConsumoEnergetico().name().charAt(0);
+        switch (letraAComprobar) {
+            case 'A':
+                electrodomestico.setPrecio(electrodomestico.getPrecio() + TIPO_CONSUMO.A.getPrecioConusmo());
+                break;
+            case 'B':
+                electrodomestico.setPrecio(electrodomestico.getPrecio() +TIPO_CONSUMO.B.getPrecioConusmo());
+                break;
+            case 'C':
+                electrodomestico.setPrecio(electrodomestico.getPrecio() +TIPO_CONSUMO.C.getPrecioConusmo());
+                break;
+            case 'D':
+                electrodomestico.setPrecio(electrodomestico.getPrecio() +TIPO_CONSUMO.D.getPrecioConusmo());
+                break;
+            case 'E':
+                electrodomestico.setPrecio(electrodomestico.getPrecio() +TIPO_CONSUMO.E.getPrecioConusmo());
+                break;
+            case 'F':
+                electrodomestico.setPrecio(electrodomestico.getPrecio() +TIPO_CONSUMO.F.getPrecioConusmo());
+                break;
+        }
+        if (electrodomestico.getPeso() > 0 && electrodomestico.getPeso() < 20) {
+            electrodomestico.setPrecio(electrodomestico.getPrecio() + 100);
+        } else if (electrodomestico.getPeso() > 19 && electrodomestico.getPeso() < 50) {
+            electrodomestico.setPrecio(electrodomestico.getPrecio() + 500);
+        } else if (electrodomestico.getPeso() > 49 && electrodomestico.getPeso() < 80) {
+            electrodomestico.setPrecio(electrodomestico.getPrecio() + 800);
+        } else if(electrodomestico.getPeso() > 79){
+            electrodomestico.setPrecio(electrodomestico.getPrecio() + 1000);
+        }
     }
-
-
 }
