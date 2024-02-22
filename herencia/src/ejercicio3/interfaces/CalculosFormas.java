@@ -12,7 +12,8 @@ formas y se mostrará el resultado final.
 Área circulo: PI * radio ^ 2 / Perímetro circulo: PI * diámetro.
 Área rectángulo: base * altura / Perímetro rectángulo: (base + altura) * 2.
  */
-public interface AreaYPerimetro {
-
-
+public interface CalculosFormas {
+      double pi = Math.PI;
+      void calcularArea();
+      void calcularPerimetro();
 }

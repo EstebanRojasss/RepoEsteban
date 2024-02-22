@@ -1,7 +1,7 @@
-package practicaejercicio.servicios;
+package apracticaejercici0.servicios;
 
-import practicaejercicio.entidades.Electrodomestico;
-import practicaejercicio.entidades.Televisor;
+import apracticaejercici0.entidades.Electrodomestico;
+import apracticaejercici0.entidades.Televisor;
 
 public class TelevisorService extends ElectrodomesticoService {
     /*
@@ -37,7 +37,7 @@ aumentará $500. Recuerda que las condiciones que hemos visto en la clase
 Electrodomestico también deben afectar al precio.
      */
 
-    public double precioFInal(Televisor televisor) {
+    public void precioFInal(Televisor televisor) {
         super.precioFinal(televisor);
         if (televisor.getPulgadas() > 40) {
             televisor.setPrecio(televisor.getPrecio() * 1.3);
@@ -45,6 +45,5 @@ Electrodomestico también deben afectar al precio.
         if (televisor.isTieneSintonizadorTDT()) {
             televisor.setPrecio(televisor.getPrecio() + 500);
         }
-        return televisor.getPrecio();
     }
 }

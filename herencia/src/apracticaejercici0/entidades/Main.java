@@ -1,7 +1,7 @@
-package practicaejercicio.entidades;
+package apracticaejercici0.entidades;
 
-import practicaejercicio.servicios.LavadoraService;
-import practicaejercicio.servicios.TelevisorService;
+import apracticaejercici0.servicios.LavadoraService;
+import apracticaejercici0.servicios.TelevisorService;
 
 import java.util.ArrayList;
 import java.util.Scanner;

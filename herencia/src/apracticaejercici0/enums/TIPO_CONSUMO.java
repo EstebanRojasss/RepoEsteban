@@ -1,4 +1,4 @@
-package practicaejercicio.enums;
+package apracticaejercici0.enums;
 
 public enum TIPO_CONSUMO {
     A(1000),B(800),C(600),D(500),E(300),F(100);

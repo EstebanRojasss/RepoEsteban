@@ -1,8 +1,8 @@
-package practicaejercicio.servicios;
+package apracticaejercici0.servicios;
 
 
-import practicaejercicio.entidades.Electrodomestico;
-import practicaejercicio.entidades.Lavadora;
+import apracticaejercici0.entidades.Electrodomestico;
+import apracticaejercici0.entidades.Lavadora;
 
 /*
 • Método crearLavadora (): este método llama a crearElectrodomestico() de la
@@ -31,11 +31,10 @@ llamar al método padre y añadir el código necesario. Recuerda que las
 condiciones que hemos visto en la clase Electrodoméstico también deben
 afectar al precio.
      */
-    public double precioFinal(Lavadora lavadora){
+    public void precioFinal(Lavadora lavadora) {
         super.precioFinal(lavadora);
-        if(lavadora.getCarga() > 30){
+        if (lavadora.getCarga() > 30) {
             lavadora.setPrecio(lavadora.getPrecio() + 500);
         }
-        return lavadora.getPrecio();
     }
 }

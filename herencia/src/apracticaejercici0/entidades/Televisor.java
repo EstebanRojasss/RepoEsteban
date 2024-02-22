@@ -1,7 +1,7 @@
-package practicaejercicio.entidades;
+package apracticaejercici0.entidades;
 
-import practicaejercicio.enums.COLORES____;
-import practicaejercicio.enums.TIPO_CONSUMO;
+import apracticaejercici0.enums.COLORES____;
+import apracticaejercici0.enums.TIPO_CONSUMO;
 
 /*
 Se debe crear también una subclase llamada Televisor con los siguientes

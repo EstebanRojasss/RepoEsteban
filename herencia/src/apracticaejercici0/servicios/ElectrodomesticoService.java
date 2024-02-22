@@ -1,9 +1,9 @@
-package practicaejercicio.servicios;
+package apracticaejercici0.servicios;
 
 
-import practicaejercicio.entidades.Electrodomestico;
-import practicaejercicio.enums.COLORES____;
-import practicaejercicio.enums.TIPO_CONSUMO;
+import apracticaejercici0.entidades.Electrodomestico;
+import apracticaejercici0.enums.COLORES____;
+import apracticaejercici0.enums.TIPO_CONSUMO;
 
 import java.util.ArrayList;
 import java.util.Arrays;
