@@ -56,12 +56,10 @@ public class Main {
                     System.out.println("========================================");
                     break;
                 case 3:
-                    System.out.println("Que tenga un buen dia");
+                    System.out.println("Que tenga un buen dia.");
                     break;
             }
         }while(menu != 3);
-
-
     }
 }
 
