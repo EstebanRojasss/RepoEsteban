@@ -5,6 +5,7 @@ import practicaejercicio.entidades.Electrodomestico;
 import practicaejercicio.enums.COLORES____;
 import practicaejercicio.enums.TIPO_CONSUMO;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -56,20 +57,20 @@ public class ElectrodomesticoService extends Electrodomestico {
      */
     public Electrodomestico crearElectrodomestico() {
         Electrodomestico electrodomestico = new Electrodomestico();
-        System.out.println("**************************************************");
+        System.out.println("==================================================");
         electrodomestico.setPrecio(1000);
         System.out.println("OPCIONES DE COLOR");
         System.out.println(Arrays.toString(COLORES____.values()));
         System.out.print("Ingrese el color: ");
         String colorAINgresar = sc.next();
         electrodomestico.setColor(comprobarColor(colorAINgresar));
-        System.out.println("**************************************************");
+        System.out.println("==================================================");
         System.out.println("OPCIONES DE CONSUMO");
         System.out.println(Arrays.toString(TIPO_CONSUMO.values()));
         System.out.print("Ingrese el tipo de consumo: ");
         char letraAIngresar = sc.next().charAt(0);
         electrodomestico.setConsumoEnergetico(comprobarConsumoEnergetico(letraAIngresar));
-        System.out.println("**************************************************");
+        System.out.println("==================================================");
         System.out.print("Ingrese el peso:  ");
         int pesoAIngresar = sc.nextInt();
         electrodomestico.setPeso(pesoAIngresar);
@@ -111,5 +112,25 @@ public class ElectrodomesticoService extends Electrodomestico {
         } else if(electrodomestico.getPeso() > 79){
             electrodomestico.setPrecio(electrodomestico.getPrecio() + 1000);
         }
+    }
+    /*
+    Luego, recorrer este array y ejecutar el método precioFinal() en cada
+electrodoméstico. Se deberá también mostrar el precio de cada tipo de objeto,
+es decir, el precio de todos los televisores y el de las lavadoras. Una vez hecho
+eso, también deberemos mostrar, la suma del precio de todos los
+Electrodomésticos.
+     */
+    public double sumaPrecios(ArrayList<Electrodomestico> electrodomesticos){
+        double sumaDePrecios = 0;
+        for(Electrodomestico electrodomestico : electrodomesticos){
+            sumaDePrecios += electrodomestico.getPrecio();
+        }
+        return sumaDePrecios;
+    }
+
+    public void mostarDatosDeElectrodomesticos(Electrodomestico electro){
+        System.out.println("==================================================");
+        System.out.println(electro);
+        System.out.println("==================================================");
     }
 }

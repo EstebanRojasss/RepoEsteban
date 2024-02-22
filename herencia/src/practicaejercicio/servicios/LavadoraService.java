@@ -31,10 +31,11 @@ llamar al método padre y añadir el código necesario. Recuerda que las
 condiciones que hemos visto en la clase Electrodoméstico también deben
 afectar al precio.
      */
-    public void precioFinal(Lavadora lavadora){
+    public double precioFinal(Lavadora lavadora){
         super.precioFinal(lavadora);
         if(lavadora.getCarga() > 30){
             lavadora.setPrecio(lavadora.getPrecio() + 500);
         }
+        return lavadora.getPrecio();
     }
 }

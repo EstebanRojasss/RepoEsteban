@@ -42,4 +42,21 @@ public class Televisor extends  Electrodomestico{
     public void setTieneSintonizadorTDT(boolean tieneSintonizadorTDT) {
         this.tieneSintonizadorTDT = tieneSintonizadorTDT;
     }
+
+    public String sintetizador(){
+        if(tieneSintonizadorTDT){
+            return "Si";
+        }return "No";
+    }
+
+    @Override
+    public String toString() {
+        return "Televisor: " +
+                "\nPulgadas: " + pulgadas +
+                "\nTieneSintonizadorTDT: " + sintetizador() +
+                "\nPrecio: " + precio +
+                "\nColor: " + color +
+                "\nConsumoEnergetico: " + consumoEnergetico +
+                "\nPeso: " + peso ;
+    }
 }
