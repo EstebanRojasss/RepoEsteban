@@ -14,6 +14,6 @@ public class YateServicio extends BarcoSerivicio{
         yate.setPotenciaCV(sc.nextInt());
         System.out.println("Ingrese el numero de camarotes: ");
         yate.setNumeroCamarotes(sc.nextInt());
-        
+        return yate;
     }
 }

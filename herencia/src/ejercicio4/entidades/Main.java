@@ -1,4 +1,9 @@
 package ejercicio4.entidades;
+
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.Scanner;
+
 /*
 En un puerto se alquilan amarres para barcos de distinto tipo. Para cada Alquiler
 se guarda: el nombre, documento del cliente, la fecha de alquiler, fecha de
@@ -22,5 +27,13 @@ clases y los métodos necesarios que permitan al usuario elegir el barco que
 quiera alquilar y mostrarle el precio final de su alquiler
  */
 public class Main {
-
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in).useDelimiter("\n");
+        System.out.println("Ingrese la fecha de alquiler: AA/ MM/ DD");
+        LocalDate fechaAlquiler = LocalDate.of(sc.nextInt(), sc.nextInt(), sc.nextInt());
+        System.out.println("Ingrese la fecha de devolucion: AA/ MM/ DD");
+        LocalDate fechaDevolucion = LocalDate.of(sc.nextInt(), sc.nextInt(), sc.nextInt());
+        Long calcularDistanciaDeFechas = ChronoUnit.DAYS.between(fechaAlquiler, fechaDevolucion);
+        System.out.println(calcularDistanciaDeFechas);
+    }
 }
