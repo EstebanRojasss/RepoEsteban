@@ -24,4 +24,13 @@ public class BarcoAMotor extends Barco{
     public void setPotenciaCV(int potenciaCV) {
         this.potenciaCV = potenciaCV;
     }
+
+    @Override
+    public String toString() {
+        return "BarcoAMotor: " +
+                "\nPotencia CV: " + potenciaCV +
+                "\nMatricula: " + matricula +
+                "\nEslora: " + eslora +
+                "\nFecha Fabricacion: " + fechaFabricacion;
+    }
 }

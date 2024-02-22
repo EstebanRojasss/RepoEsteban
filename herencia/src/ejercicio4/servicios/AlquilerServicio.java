@@ -1,7 +1,6 @@
 package ejercicio4.servicios;
 
-import ejercicio4.entidades.AlquilerAmarre;
-import ejercicio4.entidades.Barco;
+import ejercicio4.entidades.*;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -9,7 +8,7 @@ import java.util.Scanner;
 
 public class AlquilerServicio {
 
-    public AlquilerAmarre alquilarAmarre(Barco barco){
+    public AlquilerAmarre alquilarAmarre(Barco barco) {
         Scanner sc = new Scanner(System.in).useDelimiter("\n");
         AlquilerAmarre alquilerAmarre = new AlquilerAmarre();
         System.out.println("=========INGRESAR DATOS DE ALQUILER=========");
@@ -21,14 +20,22 @@ public class AlquilerServicio {
         int dia = sc.nextInt();
         int mes = sc.nextInt();
         int anho = sc.nextByte();
-        alquilerAmarre.setFechaDeAlquiler(LocalDate.of(dia, mes , anho));
-        System.out.println("Ingrese la fecha de devolución: " );
+        alquilerAmarre.setFechaDeAlquiler(LocalDate.of(dia, mes, anho));
+        System.out.println("Ingrese la fecha de devolución: ");
         alquilerAmarre.setFechaDevolucion(LocalDate.of(dia, mes, anho));
-        System.out.println("Ingrese la posicion del amarre ");
+        System.out.println("Ingrese la posicion del amarre: ");
         alquilerAmarre.setPosicion(sc.next());
-        alquilerAmarre.setBarco(barco);
+        if (barco instanceof Velero velero) {
+            alquilerAmarre.setBarco(velero);
+        } else if (barco instanceof YateDeLujo yate) {
+            alquilerAmarre.setBarco(yate);
+        }else if (barco instanceof BarcoAMotor barcoAMotor){
+            alquilerAmarre.setBarco(barcoAMotor);
+        }
+        System.out.println("==============================================");
         return alquilerAmarre;
     }
+
     /*
     Un alquiler se calcula multiplicando el número de días de ocupación (calculado
 con la fecha de alquiler y devolución), por un valor módulo de cada barco
@@ -39,15 +46,32 @@ se suma el número de mástiles, en los barcos a motor se le suma la potencia en
 CV y en los yates se suma la potencia en CV y el número de camarotes.
 Utilizando la herencia de forma apropiada, deberemos programar en Java, las
 clases y los métodos necesarios que permitan al usuario elegir el barco que
-quiera alquilar y mostrarle el precio final de su alquiler
+quiera alquilar y mostrarle el precio final de su alquiler.
      */
-    public long calcularAlquiler(AlquilerAmarre alquiler, Barco barco){
+    public long calcularAlquiler(AlquilerAmarre alquiler, Barco barco) {
         long diasOcupacion = ChronoUnit.DAYS.between(alquiler.getFechaDeAlquiler(), alquiler.getFechaDevolucion());
-        if(diasOcupacion < 0){
+        if (diasOcupacion < 0) {
             diasOcupacion *= (-1);
         }
         int valorModulo = barco.getEslora() * 10;
+        if (barco instanceof Velero velero) {
+            valorModulo = barco.getEslora() + velero.getNumeroDeMastiles();
+            return diasOcupacion * valorModulo;
+        } else if (barco instanceof YateDeLujo yate) {
+            valorModulo = barco.getEslora() + yate.getNumeroCamarotes() + yate.getPotenciaCV();
+            return diasOcupacion * valorModulo;
+        } else if (barco instanceof BarcoAMotor barcoAMotor) {
+            valorModulo = barcoAMotor.getEslora() + barcoAMotor.getPotenciaCV();
+            return diasOcupacion * valorModulo;
+        }
         return diasOcupacion * valorModulo;
+    }
+    public void mostrarDatos(Barco barco, AlquilerAmarre alquilerAmarre){
+        System.out.println("==================================");
+        System.out.println(barco);
+        System.out.println(" ");
+        System.out.println(alquilerAmarre);
+        System.out.println("==================================");
     }
 
 }

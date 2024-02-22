@@ -5,7 +5,7 @@ import ejercicio4.entidades.YateDeLujo;
 
 public class YateServicio extends BarcoSerivicio{
     public YateDeLujo crearYate(){
-        Barco barco = new Barco();
+        Barco barco = crearBarco();
         YateDeLujo yate = new YateDeLujo();
         yate.setMatricula(barco.getMatricula());
         yate.setEslora(barco.getEslora());

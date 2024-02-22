@@ -36,4 +36,13 @@ public class YateDeLujo extends Barco{
         this.numeroCamarotes = numeroCamarotes;
     }
 
+    @Override
+    public String toString() {
+        return "YateDeLujo: " +
+                "\nPotencia CV (Caballos de fuerza): " + potenciaCV +
+                "\nNumero de camarotes: " + numeroCamarotes +
+                "\nMatricula: " + matricula +
+                "\nEslora: " + eslora +
+                "\nFecha Fabricacion: " + fechaFabricacion ;
+    }
 }

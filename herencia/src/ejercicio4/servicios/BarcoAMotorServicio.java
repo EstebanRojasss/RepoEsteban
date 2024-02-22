@@ -5,7 +5,7 @@ import ejercicio4.entidades.BarcoAMotor;
 
 public class BarcoAMotorServicio extends BarcoSerivicio{
     public BarcoAMotor crearBarcoAMotor(){
-        Barco barco = new Barco();
+        Barco barco = crearBarco();
         BarcoAMotor barcoAMotor = new BarcoAMotor();
         barcoAMotor.setMatricula(barco.getMatricula());
         barcoAMotor.setEslora(barco.getEslora());

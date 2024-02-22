@@ -4,8 +4,8 @@ import ejercicio4.entidades.Barco;
 import ejercicio4.entidades.Velero;
 
 public class VeleroServicio extends BarcoSerivicio{
-    public Barco datosVelero(){
-        Barco barco = new Barco();
+    public Barco crearVelero(){
+        Barco barco = crearBarco();
         Velero velero = new Velero();
         velero.setMatricula(barco.getMatricula());
         velero.setEslora(barco.getMatricula());

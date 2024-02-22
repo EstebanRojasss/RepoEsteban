@@ -69,4 +69,15 @@ public class AlquilerAmarre {
     public void setBarco(Barco barco) {
         this.barco = barco;
     }
+
+    @Override
+    public String toString() {
+        return "Datos del alquiler: " +
+                "\nNombre de cliente: " + nombre +
+                "\nDocumente identidad: " + documentoCliente +
+                "\nFecha de alquiler: " + fechaDeAlquiler +
+                "\nFecha de devolucion: " + fechaDevolucion +
+                "\nPosicion de amarre: " + posicion +
+                "\nBarco: " + barco;
+    }
 }

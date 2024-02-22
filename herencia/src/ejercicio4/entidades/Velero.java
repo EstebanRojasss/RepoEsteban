@@ -2,7 +2,7 @@ package ejercicio4.entidades;
 
 import java.time.LocalDate;
 
-public class Velero extends Barco{
+public class Velero extends Barco {
     private int numeroDeMastiles;
 
     public Velero() {
@@ -19,5 +19,14 @@ public class Velero extends Barco{
 
     public void setNumeroDeMastiles(int numeroDeMastiles) {
         this.numeroDeMastiles = numeroDeMastiles;
+    }
+
+    @Override
+    public String toString() {
+        return "Velero: " +
+                "\nNumero De Mastiles: " + numeroDeMastiles +
+                "\nMatricula: " + matricula +
+                "\nEslora=" + eslora +
+                "\nFecha Fabricacion: " + fechaFabricacion;
     }
 }

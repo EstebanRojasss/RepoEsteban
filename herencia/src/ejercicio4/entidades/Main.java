@@ -1,7 +1,9 @@
 package ejercicio4.entidades;
 
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
+import ejercicio4.servicios.*;
+
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -29,11 +31,44 @@ quiera alquilar y mostrarle el precio final de su alquiler
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in).useDelimiter("\n");
-        System.out.println("Ingrese la fecha de alquiler: AA/ MM/ DD");
-        LocalDate fechaAlquiler = LocalDate.of(sc.nextInt(), sc.nextInt(), sc.nextInt());
-        System.out.println("Ingrese la fecha de devolucion: AA/ MM/ DD");
-        LocalDate fechaDevolucion = LocalDate.of(sc.nextInt(), sc.nextInt(), sc.nextInt());
-        Long calcularDistanciaDeFechas = ChronoUnit.DAYS.between(fechaAlquiler, fechaDevolucion);
-        System.out.println(calcularDistanciaDeFechas);
+        AlquilerServicio servicioAlquiler = new AlquilerServicio();
+        BarcoAMotorServicio barcoAMotorService = new BarcoAMotorServicio();
+        VeleroServicio veleroServicio = new VeleroServicio();
+        YateServicio yateServicio = new YateServicio();
+        AlquilerAmarre nuevoAlquiler;
+        int menu;
+        do {
+            System.out.println("MENU DE BARCOS");
+            System.out.println("1. Barco a motor");
+            System.out.println("2. Velero");
+            System.out.println("3. Yate de Lujo");
+            menu = sc.nextInt();
+            switch(menu){
+                case 1:
+                    Barco barcoAMotor = barcoAMotorService.crearBarcoAMotor();
+                    nuevoAlquiler = servicioAlquiler.alquilarAmarre(barcoAMotor);
+                    System.out.println("El precio del alquiler es: " + servicioAlquiler.calcularAlquiler(nuevoAlquiler, barcoAMotor));
+                    servicioAlquiler.mostrarDatos(barcoAMotor,nuevoAlquiler);
+                    break;
+                case 2:
+                    Barco velero = veleroServicio.crearVelero();
+                    nuevoAlquiler = servicioAlquiler.alquilarAmarre(velero);
+                    servicioAlquiler.calcularAlquiler(nuevoAlquiler, velero);
+                    System.out.println("El precio del alquiler es: " + servicioAlquiler.calcularAlquiler(nuevoAlquiler, velero));
+                    servicioAlquiler.mostrarDatos(velero, nuevoAlquiler);
+                    break;
+                case 3:
+                    Barco yate = yateServicio.crearYate();
+                    nuevoAlquiler = servicioAlquiler.alquilarAmarre(yate);
+                    servicioAlquiler.calcularAlquiler(nuevoAlquiler, yate);
+                    System.out.println("El precio del alquiler es: " + servicioAlquiler.calcularAlquiler(nuevoAlquiler, yate));
+                    servicioAlquiler.mostrarDatos(yate, nuevoAlquiler);
+                    break;
+                default:
+                    System.out.println("==============================================");
+                    System.out.println("Debe ingresar una de las opciones disponibles");
+                    System.out.println("==============================================");
+            }
+        } while (menu != 1 && menu != 2 && menu != 3);
     }
 }
