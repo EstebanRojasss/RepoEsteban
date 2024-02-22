@@ -1,7 +1,6 @@
 package ejercicio5.servicios;
 
 
-import ejercicio5.entidades.GestionCuota;
 import ejercicio5.entidades.GestionPoliza;
 import ejercicio5.enums.FORMAPAGO;
 import ejercicio5.enums.TIPOCOBERTURA;
