@@ -2,8 +2,6 @@ package ejercicio4.entidades;
 
 import ejercicio4.servicios.*;
 
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -35,7 +33,6 @@ public class Main {
         BarcoAMotorServicio barcoAMotorService = new BarcoAMotorServicio();
         VeleroServicio veleroServicio = new VeleroServicio();
         YateServicio yateServicio = new YateServicio();
-        AlquilerAmarre nuevoAlquiler;
         int menu;
         do {
             System.out.println("MENU DE BARCOS");
@@ -46,23 +43,21 @@ public class Main {
             switch(menu){
                 case 1:
                     Barco barcoAMotor = barcoAMotorService.crearBarcoAMotor();
-                    nuevoAlquiler = servicioAlquiler.alquilarAmarre(barcoAMotor);
-                    System.out.println("El precio del alquiler es: " + servicioAlquiler.calcularAlquiler(nuevoAlquiler, barcoAMotor));
-                    servicioAlquiler.mostrarDatos(barcoAMotor,nuevoAlquiler);
+                    AlquilerAmarre alquilerBarcoMotor = servicioAlquiler.alquilarAmarre(barcoAMotor);
+                    servicioAlquiler.mostrarDatos(alquilerBarcoMotor);
+                    System.out.println("El precio del alquiler es: " +servicioAlquiler.calcularAlquiler(alquilerBarcoMotor));
                     break;
                 case 2:
                     Barco velero = veleroServicio.crearVelero();
-                    nuevoAlquiler = servicioAlquiler.alquilarAmarre(velero);
-                    servicioAlquiler.calcularAlquiler(nuevoAlquiler, velero);
-                    System.out.println("El precio del alquiler es: " + servicioAlquiler.calcularAlquiler(nuevoAlquiler, velero));
-                    servicioAlquiler.mostrarDatos(velero, nuevoAlquiler);
+                    AlquilerAmarre alquilerVelero =  servicioAlquiler.alquilarAmarre(velero);
+                    servicioAlquiler.mostrarDatos(alquilerVelero);
+                    System.out.println("El precio del alquiler es: " +servicioAlquiler.calcularAlquiler(alquilerVelero));
                     break;
                 case 3:
                     Barco yate = yateServicio.crearYate();
-                    nuevoAlquiler = servicioAlquiler.alquilarAmarre(yate);
-                    servicioAlquiler.calcularAlquiler(nuevoAlquiler, yate);
-                    System.out.println("El precio del alquiler es: " + servicioAlquiler.calcularAlquiler(nuevoAlquiler, yate));
-                    servicioAlquiler.mostrarDatos(yate, nuevoAlquiler);
+                    AlquilerAmarre alquilerYate =  servicioAlquiler.alquilarAmarre(yate);
+                    servicioAlquiler.mostrarDatos(alquilerYate);
+                    System.out.println("El precio del alquiler es: " +servicioAlquiler.calcularAlquiler(alquilerYate));
                     break;
                 default:
                     System.out.println("==============================================");

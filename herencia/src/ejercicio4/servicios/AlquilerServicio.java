@@ -17,21 +17,13 @@ public class AlquilerServicio {
         System.out.println("Ingrese el documento de identidad: ");
         alquilerAmarre.setDocumentoCliente(sc.nextInt());
         System.out.println("Ingrese la fecha de alquiler: ");
-        int dia = sc.nextInt();
-        int mes = sc.nextInt();
-        int anho = sc.nextByte();
-        alquilerAmarre.setFechaDeAlquiler(LocalDate.of(dia, mes, anho));
+        alquilerAmarre.setFechaDeAlquiler(LocalDate.of(sc.nextInt(),sc.nextInt() ,sc.nextInt()));
         System.out.println("Ingrese la fecha de devolución: ");
-        alquilerAmarre.setFechaDevolucion(LocalDate.of(dia, mes, anho));
+        alquilerAmarre.setFechaDevolucion(LocalDate.of(sc.nextInt(),sc.nextInt() ,sc.nextInt()));
         System.out.println("Ingrese la posicion del amarre: ");
         alquilerAmarre.setPosicion(sc.next());
-        if (barco instanceof Velero velero) {
-            alquilerAmarre.setBarco(velero);
-        } else if (barco instanceof YateDeLujo yate) {
-            alquilerAmarre.setBarco(yate);
-        }else if (barco instanceof BarcoAMotor barcoAMotor){
-            alquilerAmarre.setBarco(barcoAMotor);
-        }
+        alquilerAmarre.setBarco(barco);
+        System.out.println(" ");
         System.out.println("==============================================");
         return alquilerAmarre;
     }
@@ -48,30 +40,32 @@ Utilizando la herencia de forma apropiada, deberemos programar en Java, las
 clases y los métodos necesarios que permitan al usuario elegir el barco que
 quiera alquilar y mostrarle el precio final de su alquiler.
      */
-    public long calcularAlquiler(AlquilerAmarre alquiler, Barco barco) {
+    public long calcularAlquiler(AlquilerAmarre alquiler) {
         long diasOcupacion = ChronoUnit.DAYS.between(alquiler.getFechaDeAlquiler(), alquiler.getFechaDevolucion());
         if (diasOcupacion < 0) {
             diasOcupacion *= (-1);
         }
-        int valorModulo = barco.getEslora() * 10;
-        if (barco instanceof Velero velero) {
-            valorModulo = barco.getEslora() + velero.getNumeroDeMastiles();
+        System.out.println("Dias de ocupacion: " + diasOcupacion);
+        int valorModulo = alquiler.getBarco().getEslora() * 10;
+        if (alquiler.getBarco() instanceof Velero velero) {
+            valorModulo +=  velero.getNumeroDeMastiles();
             return diasOcupacion * valorModulo;
-        } else if (barco instanceof YateDeLujo yate) {
-            valorModulo = barco.getEslora() + yate.getNumeroCamarotes() + yate.getPotenciaCV();
+        } else if (alquiler.getBarco() instanceof YateDeLujo yate) {
+            valorModulo += (yate.getNumeroCamarotes() + yate.getPotenciaCV());
             return diasOcupacion * valorModulo;
-        } else if (barco instanceof BarcoAMotor barcoAMotor) {
-            valorModulo = barcoAMotor.getEslora() + barcoAMotor.getPotenciaCV();
+        } else if (alquiler.getBarco() instanceof BarcoAMotor barcoAMotor) {
+            valorModulo += barcoAMotor.getPotenciaCV();
             return diasOcupacion * valorModulo;
         }
         return diasOcupacion * valorModulo;
     }
-    public void mostrarDatos(Barco barco, AlquilerAmarre alquilerAmarre){
-        System.out.println("==================================");
-        System.out.println(barco);
-        System.out.println(" ");
+
+
+    public void mostrarDatos(AlquilerAmarre alquilerAmarre){
+        System.out.println("==============================================");
         System.out.println(alquilerAmarre);
-        System.out.println("==================================");
+        System.out.println("==============================================");
     }
+
 
 }

@@ -45,8 +45,8 @@ public class Barco {
     @Override
     public String toString() {
         return
-                "Matricula: " + matricula +
-                "Eslora: " + eslora +
-                "FechaFabricacion: " + fechaFabricacion ;
+                "\nMatricula: " + matricula +
+                "\nEslora: " + eslora +
+                "\nFechaFabricacion: " + fechaFabricacion ;
     }
 }
