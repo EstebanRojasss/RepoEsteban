@@ -1,4 +1,5 @@
 package ejercicio5.entidades;
+
 /*
  Crear una superclase llamada Edificio con los siguientes atributos: ancho, alto y
 largo. La clase edificio tendrá como métodos:
@@ -26,7 +27,7 @@ deberemos llamar al método cantPersonas() y mostrar los resultados de cada
 edificio de oficinas.
  */
 public class Main {
-public static void main (String []args){
+    public static void main(String[] args) {
 
-}
+    }
 }
