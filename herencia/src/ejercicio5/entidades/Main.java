@@ -8,7 +8,6 @@ Estos métodos serán abstractos y los implementarán las siguientes clases:
 • Clase Polideportivo con su nombre y tipo de instalación que puede ser
 Techado o Abierto, esta clase implementará los dos métodos abstractos y los
 atributos del padre.
-15
 • Clase EdificioDeOficinas con sus atributos número de oficinas, cantidad de
 personas por oficina y numero de pisos. Esta clase implementará los dos
 métodos abstractos y los atributos del padre.
@@ -27,5 +26,7 @@ deberemos llamar al método cantPersonas() y mostrar los resultados de cada
 edificio de oficinas.
  */
 public class Main {
-    
+public static void main (String []args){
+
+}
 }
