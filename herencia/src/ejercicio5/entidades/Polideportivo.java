@@ -13,6 +13,7 @@ public class Polideportivo extends Edificio {
     private TIPO_INSTALACION tipoInstalacion;
 
     public Polideportivo() {
+        ingresarDatosPoli();
     }
 
     public Polideportivo(int ancho, int alto, int largo, String nombre, TIPO_INSTALACION tipoInstalacion) {
@@ -71,6 +72,7 @@ public class Polideportivo extends Edificio {
                 default:
                     System.out.println("Debe ingresar una de las opciones.");
             }
+            ingresarMedidas();
         } while (menu != 1 && menu != 2);
 
     }

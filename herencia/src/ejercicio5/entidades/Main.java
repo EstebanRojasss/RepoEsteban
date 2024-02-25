@@ -1,5 +1,7 @@
 package ejercicio5.entidades;
 
+import java.util.ArrayList;
+
 /*
  Crear una superclase llamada Edificio con los siguientes atributos: ancho, alto y
 largo. La clase edificio tendrá como métodos:
@@ -28,6 +30,16 @@ edificio de oficinas.
  */
 public class Main {
     public static void main(String[] args) {
+        ArrayList<Edificio>edificios = new ArrayList<>();
+        for(int i = 0 ; i < 2; i++){
+        Polideportivo poli1 = new Polideportivo();
+        edificios.add(poli1);
+        EdificioOficinas oficinasEdi = new EdificioOficinas();
+        edificios.add(oficinasEdi);
+        }
 
+        for(Edificio edificio : edificios){
+            System.out.println(edificio);
+        }
     }
 }

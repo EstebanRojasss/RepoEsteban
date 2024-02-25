@@ -53,5 +53,8 @@ public abstract class Edificio {
         ancho = sc.nextInt();
         System.out.println("Ingrese el alto del edificio");
         alto = sc.nextInt();
+        System.out.println("La superficie es: " + calcularSuperficie());
+        System.out.println("El volumen es: " + calcularVolumen());
     }
+
 }
