@@ -1,5 +1,7 @@
 package ejercicio5.entidades;
 
+import ejercicio5.enums.TIPO_INSTALACION;
+
 import java.util.ArrayList;
 
 /*
@@ -37,5 +39,23 @@ public class Main {
         EdificioOficinas oficinasEdi = new EdificioOficinas();
         edificios.add(oficinasEdi);
         }
+        int contadorAbierto = 0;
+        int contadorTechado = 0;
+        for(Edificio edificio : edificios){
+            if(edificio instanceof Polideportivo polideportivo){
+                polideportivo.ingresarDatosPoli();
+                if(polideportivo.getTipoInstalacion().equals(TIPO_INSTALACION.ABIERTO)){
+                    contadorAbierto++;
+                }else{
+                    contadorTechado++;
+                }
+            }else if( edificio instanceof EdificioOficinas edificioOficinas){
+                edificioOficinas.ingresarDatosEdiOfi();
+            }
+        }
+        System.out.println("La cantidad de edificios abiertos son: " + contadorAbierto);
+        System.out.println("La cantidad de edificios techados son: " + contadorTechado);
+
+
     }
 }

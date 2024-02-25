@@ -55,6 +55,7 @@ public abstract class Edificio {
         alto = sc.nextInt();
         System.out.println("La superficie es: " + calcularSuperficie());
         System.out.println("El volumen es: " + calcularVolumen());
+        System.out.println("====================================");
     }
 
 }

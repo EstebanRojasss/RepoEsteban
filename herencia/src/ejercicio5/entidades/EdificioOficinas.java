@@ -10,7 +10,6 @@ public class EdificioOficinas extends Edificio{
     private int numeroDePisos;
 
     public EdificioOficinas() {
-        ingresarDatosEdiOfi();
     }
 
     public EdificioOficinas(int numeroOficinas, int cantidadDePersonasxOficina, int numeroDePisos) {
@@ -78,8 +77,8 @@ un piso y cuantas en todo el edificio.
         setCantidadDePersonasxOficina(sc.nextInt());
         System.out.println("Ingrese la cantidad de pisos: ");
         setNumeroDePisos(sc.nextInt());
-        cantPersonas();
         ingresarMedidas();
+        cantPersonas();
     }
     public void cantPersonas(){
         int cantidadDePersonasxPiso = getCantidadDePersonasxOficina() * getNumeroOficinas();
