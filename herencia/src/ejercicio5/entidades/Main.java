@@ -53,6 +53,7 @@ public class Main {
                 edificioOficinas.ingresarDatosEdiOfi();
             }
         }
+        System.out.println("====================================");
         System.out.println("La cantidad de edificios abiertos son: " + contadorAbierto);
         System.out.println("La cantidad de edificios techados son: " + contadorTechado);
 
