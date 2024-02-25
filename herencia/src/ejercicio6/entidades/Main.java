@@ -51,4 +51,7 @@ criterios:
 • todos las residencias que tienen descuento.
  */
 public class Main {
+    public static void main(String[]args){
+
+    }
 }
