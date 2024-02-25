@@ -71,6 +71,7 @@ Crear el método cantPersonas(), que muestre cuantas personas entrarían en
 un piso y cuantas en todo el edificio.
      */
     public void ingresarDatosEdiOfi(){
+        System.out.println("====================================");
         System.out.println("Ingrese la cantidad de oficinas por piso: ");
         setNumeroOficinas(sc.nextInt());
         System.out.println("Ingrese la cantidad de personas en cada oficina: ");

@@ -37,9 +37,5 @@ public class Main {
         EdificioOficinas oficinasEdi = new EdificioOficinas();
         edificios.add(oficinasEdi);
         }
-
-        for(Edificio edificio : edificios){
-            System.out.println(edificio);
-        }
     }
 }

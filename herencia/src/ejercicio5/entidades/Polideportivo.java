@@ -54,6 +54,8 @@ public class Polideportivo extends Edificio {
     }
 
     public void ingresarDatosPoli() {
+        System.out.println("====================================");
+        System.out.println("DATOS DE POLIDEPORTIVO");
         System.out.println("Ingrese el nombre del polideportivo: ");
         setNombre(sc.next());
         int menu;
