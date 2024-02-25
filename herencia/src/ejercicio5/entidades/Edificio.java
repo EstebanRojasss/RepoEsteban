@@ -1,9 +1,13 @@
 package ejercicio5.entidades;
 
+import java.util.Scanner;
+
 public abstract class Edificio {
     protected int ancho;
     protected int alto;
     protected int largo;
+    Scanner sc = new Scanner(System.in).useDelimiter("\n");
+
     public Edificio() {
     }
 
@@ -37,6 +41,17 @@ public abstract class Edificio {
         this.largo = largo;
     }
 
-    public abstract void calcularSuperficie();
-    public abstract void calcularVolumen();
+    public abstract int calcularSuperficie();
+
+    public abstract int calcularVolumen();
+
+    public void ingresarMedidas() {
+        System.out.println("====================================");
+        System.out.println("Ingrese el largo del edificio: ");
+        largo = sc.nextInt();
+        System.out.println("Ingrese el ancho del edificio: ");
+        ancho = sc.nextInt();
+        System.out.println("Ingrese el alto del edificio");
+        alto = sc.nextInt();
+    }
 }
