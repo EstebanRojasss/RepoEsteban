@@ -1,6 +1,6 @@
 package ejercicio6.entidades;
 
-public abstract class Hotel extends Alojamiento{
+public  class Hotel extends Alojamiento{
     protected int cantidadHabitaciones;
     protected int numeroCamas;
     protected int cantidadPisos;
@@ -50,9 +50,6 @@ public abstract class Hotel extends Alojamiento{
     public void setPrecioHabitaciones(double precioHabitaciones) {
         this.precioHabitaciones = precioHabitaciones;
     }
-
-    public abstract void precioHabitacion();
-
     @Override
     public String toString() {
         return "Hotel{" +
