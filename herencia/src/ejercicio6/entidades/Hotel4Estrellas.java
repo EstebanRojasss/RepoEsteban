@@ -9,6 +9,7 @@ public class Hotel4Estrellas extends Hotel{
 
     }
 
+
     public Hotel4Estrellas(String nombre, String direccion, String localidad, String gerente, int cantidadHabitaciones, int numeroCamas, int cantidadPisos, double precioHabitaciones, char gimnasio, String nombreRestaurante, int restauranteCapacidad) {
         super(nombre, direccion, localidad, gerente, cantidadHabitaciones, numeroCamas, cantidadPisos, precioHabitaciones);
         this.gimnasio = gimnasio;
@@ -38,5 +39,14 @@ public class Hotel4Estrellas extends Hotel{
 
     public void setRestauranteCapacidad(int restauranteCapacidad) {
         this.restauranteCapacidad = restauranteCapacidad;
+    }
+    /*
+        Valor agregado por el restaurante:
+• $10 si la capacidad del restaurante es de menos de 30 personas.
+• $30 si está entre 30 y 50 personas.
+• $50 si es mayor de 50.
+     */
+    @Override
+    public void precioHabitacion() {
     }
 }
