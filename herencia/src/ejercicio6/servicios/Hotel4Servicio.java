@@ -33,6 +33,11 @@ public class Hotel4Servicio extends HotelServicio {
         hotelEstrellas.setRestauranteCapacidad(sc.nextInt());
         return hotelEstrellas;
     }
+    public void precioHabitacion(Hotel hotel, Hotel4Estrellas hotelEstrellas){
+        hotel.setPrecioHabitaciones(50 + (hotel.getCantidadHabitaciones()) +
+                valorAgregadoGimnasio(hotelEstrellas) +
+                valorAgregadoRestaurante(hotelEstrellas));
+    }
 
     public int valorAgregadoRestaurante(Hotel4Estrellas hotelEstrellas) {
         if (hotelEstrellas.getRestauranteCapacidad() < 30) {

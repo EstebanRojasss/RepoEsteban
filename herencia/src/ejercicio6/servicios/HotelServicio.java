@@ -22,7 +22,6 @@ public class HotelServicio extends AlojamientoServicio{
         hotel.setPrecioHabitaciones(sc.nextDouble());
         return hotel;
     }
-    public void precioHabitacion(Hotel hotel, int valorAgregadoRestaurante,int valorAgregadoGimnasio){
-        hotel.setPrecioHabitaciones(50 + (hotel.getCantidadHabitaciones()) + (valorAgregadoRestaurante));
-    }
+
+
 }

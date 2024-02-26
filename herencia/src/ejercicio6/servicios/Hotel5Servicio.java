@@ -1,5 +1,6 @@
 package ejercicio6.servicios;
 
+import ejercicio6.entidades.Hotel;
 import ejercicio6.entidades.Hotel4Estrellas;
 import ejercicio6.entidades.Hotel5Estrellas;
 
@@ -21,6 +22,12 @@ public class Hotel5Servicio extends Hotel4Servicio{
         System.out.println("Ingrese la cantidad de limosinas: ");
         hotel5Estrellas.setCantLimosinas(sc.nextInt());
         return hotel5Estrellas;
+    }
+
+    @Override
+    public void precioHabitacion(Hotel hotel, Hotel4Estrellas hotelEstrellas) {
+        super.precioHabitacion(hotel, hotelEstrellas);
+        hotel.setPrecioHabitaciones(hotel.getPrecioHabitaciones() + 15);
     }
 
     @Override
