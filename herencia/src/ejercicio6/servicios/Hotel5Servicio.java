@@ -22,4 +22,14 @@ public class Hotel5Servicio extends Hotel4Servicio{
         hotel5Estrellas.setCantLimosinas(sc.nextInt());
         return hotel5Estrellas;
     }
+
+    @Override
+    public int valorAgregadoRestaurante(Hotel4Estrellas hotelEstrellas) {
+        return super.valorAgregadoRestaurante(hotelEstrellas);
+    }
+
+    @Override
+    public int valorAgregadoGimnasio(Hotel4Estrellas hotelEstrellas) {
+        return super.valorAgregadoGimnasio(hotelEstrellas);
+    }
 }
