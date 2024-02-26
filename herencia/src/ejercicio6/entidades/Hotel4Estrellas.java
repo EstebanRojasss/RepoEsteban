@@ -41,31 +41,4 @@ public class Hotel4Estrellas extends Hotel {
         this.restauranteCapacidad = restauranteCapacidad;
     }
 
-    /*
-        Valor agregado por el restaurante:
-• $10 si la capacidad del restaurante es de menos de 30 personas.
-• $30 si está entre 30 y 50 personas.
-• $50 si es mayor de 50.
-     */
-
-    public int valorAgregadoRestaurante() {
-        if (getRestauranteCapacidad() < 30) {
-            return 10;
-        } else if (getRestauranteCapacidad() > 29 && getRestauranteCapacidad() <= 50) {
-            return 30;
-        }
-        return 50;
-    }
-
-    /*
-    Valor agregado por el gimnasio:
-    • $50 si el tipo del gimnasio es A.
-    • $30 si el tipo del gimnasio es B.
-     */
-    public int valorAgregadoGimnasio() {
-        if (getGimnasio() == 'A') {
-            return 50;
-        }
-        return 30;
-    }
 }

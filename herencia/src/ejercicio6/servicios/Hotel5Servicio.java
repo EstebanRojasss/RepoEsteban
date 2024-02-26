@@ -14,8 +14,12 @@ public class Hotel5Servicio extends Hotel4Servicio{
         hotel5Estrellas.setGimnasio(hotelEstrellas.getGimnasio());
         hotel5Estrellas.setNombreRestaurante(hotelEstrellas.getNombreRestaurante());
         hotel5Estrellas.setRestauranteCapacidad(hotelEstrellas.getRestauranteCapacidad());
-        System.out.println("Ingrese");
+        System.out.println("Ingrese la cantidad de salones de conferencia: ");
         hotel5Estrellas.setCantSalonesDeConferencia(sc.nextInt());
+        System.out.println("Ingrese la cantidad de suites: ");
         hotel5Estrellas.setCantSuites(sc.nextInt());
+        System.out.println("Ingrese la cantidad de limosinas: ");
+        hotel5Estrellas.setCantLimosinas(sc.nextInt());
+        return hotel5Estrellas;
     }
 }

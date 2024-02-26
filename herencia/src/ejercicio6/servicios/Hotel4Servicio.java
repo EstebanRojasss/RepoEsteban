@@ -17,7 +17,7 @@ public class Hotel4Servicio extends HotelServicio {
         do {
             tipoGym = sc.next().toUpperCase().charAt(0);
         } while (tipoGym != 'A' && tipoGym != 'B');
-        switch (tipoGym){
+        switch (tipoGym) {
             case 'A':
                 hotelEstrellas.setGimnasio('A');
                 break;
@@ -32,5 +32,21 @@ public class Hotel4Servicio extends HotelServicio {
         System.out.println("Ingrese la capacidad del restaurante: ");
         hotelEstrellas.setRestauranteCapacidad(sc.nextInt());
         return hotelEstrellas;
+    }
+
+    public int valorAgregadoRestaurante(Hotel4Estrellas hotelEstrellas) {
+        if (hotelEstrellas.getRestauranteCapacidad() < 30) {
+            return 10;
+        } else if (hotelEstrellas.getRestauranteCapacidad() > 29 && hotelEstrellas.getRestauranteCapacidad() <= 50) {
+            return 30;
+        }
+        return 50;
+    }
+
+    public int valorAgregadoGimnasio(Hotel4Estrellas hotelEstrellas) {
+        if (hotelEstrellas.getGimnasio() == 'A') {
+            return 50;
+        }
+        return 30;
     }
 }
