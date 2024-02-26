@@ -24,7 +24,6 @@ public class Hotel5Servicio extends Hotel4Servicio{
         return hotel5Estrellas;
     }
 
-    @Override
     public void precioHabitacion(Hotel hotel, Hotel4Estrellas hotelEstrellas) {
         super.precioHabitacion(hotel, hotelEstrellas);
         hotel.setPrecioHabitaciones(hotel.getPrecioHabitaciones() + 15);
