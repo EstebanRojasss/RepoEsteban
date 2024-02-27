@@ -2,18 +2,20 @@ package ejercicio6.entidades.hoteles;
 
 import ejercicio6.entidades.Alojamiento;
 
+import java.util.Comparator;
+
 public  class Hotel extends Alojamiento {
     protected int cantidadHabitaciones;
     protected int numeroCamas;
     protected int cantidadPisos;
-    protected double precioHabitaciones;
+    protected Integer precioHabitaciones;
 
 
     public Hotel() {
 
     }
 
-    public Hotel(String nombre, String direccion, String localidad, String gerente, int cantidadHabitaciones, int numeroCamas, int cantidadPisos, double precioHabitaciones) {
+    public Hotel(String nombre, String direccion, String localidad, String gerente, int cantidadHabitaciones, int numeroCamas, int cantidadPisos, Integer precioHabitaciones) {
         super(nombre, direccion, localidad, gerente);
         this.cantidadHabitaciones = cantidadHabitaciones;
         this.numeroCamas = numeroCamas;
@@ -45,12 +47,18 @@ public  class Hotel extends Alojamiento {
         this.cantidadPisos = cantidadPisos;
     }
 
-    public double getPrecioHabitaciones() {
+    public Integer getPrecioHabitaciones() {
         return precioHabitaciones;
     }
 
-    public void setPrecioHabitaciones(double precioHabitaciones) {
+    public void setPrecioHabitaciones(Integer precioHabitaciones) {
         this.precioHabitaciones = precioHabitaciones;
     }
+    public Comparator<Hotel> compararPrecios = new Comparator<Hotel>() {
+        @Override
+        public int compare(Hotel o1, Hotel o2) {
+            return o1.getPrecioHabitaciones().compareTo(o2.getPrecioHabitaciones());
+        }
+    };
 
 }

@@ -11,6 +11,7 @@ import ejercicio6.servicios.serviciosExtraHoteleros.CampingServicio;
 import ejercicio6.servicios.serviciosExtraHoteleros.ResidenciaServicio;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /*
  Una compañía de promociones turísticas desea mantener información sobre la
@@ -103,7 +104,8 @@ public class Main {
 
         // MOSTRAR HOTEL MAS CAROS A MAS BARATOS
         System.out.println("================HOTELES DE MAYOR COSTO A MENOR================");
-
+        System.out.println(hotelesMayorAMenor(alojamientos));
+        
     }
 
     public static ArrayList<Hotel> hotelesMayorAMenor(ArrayList<Alojamiento>alojamientos){
@@ -111,7 +113,9 @@ public class Main {
         for(Alojamiento alojamiento : alojamientos){
             if(alojamiento instanceof Hotel hotel){
                 hoteles.add(hotel);
+                hoteles.sort(hotel.compararPrecios);
             }
         }
+        return hoteles;
     }
 }
