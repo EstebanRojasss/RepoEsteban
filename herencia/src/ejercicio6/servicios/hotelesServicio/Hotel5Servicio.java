@@ -1,10 +1,10 @@
-package ejercicio6.servicios;
+package ejercicio6.servicios.hotelesServicio;
 
-import ejercicio6.entidades.Hotel4Estrellas;
-import ejercicio6.entidades.Hotel5Estrellas;
+import ejercicio6.entidades.hoteles.Hotel4Estrellas;
+import ejercicio6.entidades.hoteles.Hotel5Estrellas;
 
-public class Hotel5Servicio extends Hotel4Servicio{
-    public Hotel5Estrellas datos5Estrellas(){
+public class Hotel5Servicio extends Hotel4Servicio {
+    public Hotel5Estrellas datos5Estrellas() {
         Hotel4Estrellas hotelEstrellas = datosHotelEstrellas();
         Hotel5Estrellas hotel5Estrellas = new Hotel5Estrellas();
         hotel5Estrellas.setNombre(hotelEstrellas.getNombre());
@@ -22,11 +22,12 @@ public class Hotel5Servicio extends Hotel4Servicio{
         hotel5Estrellas.setCantSuites(sc.nextInt());
         System.out.println("Ingrese la cantidad de limosinas: ");
         hotel5Estrellas.setCantLimosinas(sc.nextInt());
-        hotel5Estrellas.setPrecioHabitaciones(hotelEstrellas.getPrecioHabitaciones() + valorAgregadoLimosina(hotel5Estrellas));
+        hotel5Estrellas.setPrecioHabitaciones(hotelEstrellas.getPrecioHabitaciones()
+                + valorAgregadoLimosina(hotel5Estrellas));
         return hotel5Estrellas;
     }
 
-    public double valorAgregadoLimosina(Hotel5Estrellas hotel5Estrellas){
+    public double valorAgregadoLimosina(Hotel5Estrellas hotel5Estrellas) {
         return hotel5Estrellas.getCantLimosinas() * 15;
     }
 }

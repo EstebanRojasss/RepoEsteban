@@ -1,6 +1,7 @@
 package ejercicio6.entidades;
 
-import ejercicio6.servicios.Hotel5Servicio;
+import ejercicio6.entidades.hoteles.Hotel5Estrellas;
+import ejercicio6.servicios.hotelesServicio.Hotel5Servicio;
 
 /*
  Una compañía de promociones turísticas desea mantener información sobre la
@@ -59,4 +60,6 @@ public class Main {
         Hotel5Estrellas hotel5Estrellas = hotel5S.datos5Estrellas();
         System.out.println(hotel5Estrellas);
     }
+
+
 }

@@ -1,6 +1,8 @@
-package ejercicio6.entidades;
+package ejercicio6.entidades.hoteles;
 
-public  class Hotel extends Alojamiento{
+import ejercicio6.entidades.Alojamiento;
+
+public  class Hotel extends Alojamiento {
     protected int cantidadHabitaciones;
     protected int numeroCamas;
     protected int cantidadPisos;

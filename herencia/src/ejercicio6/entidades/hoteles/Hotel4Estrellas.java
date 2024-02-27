@@ -1,4 +1,4 @@
-package ejercicio6.entidades;
+package ejercicio6.entidades.hoteles;
 
 public class Hotel4Estrellas extends Hotel {
     protected char gimnasio;

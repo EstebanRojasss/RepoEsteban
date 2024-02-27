@@ -1,7 +1,7 @@
-package ejercicio6.servicios;
+package ejercicio6.servicios.hotelesServicio;
 
-import ejercicio6.entidades.Hotel;
-import ejercicio6.entidades.Hotel4Estrellas;
+import ejercicio6.entidades.hoteles.Hotel;
+import ejercicio6.entidades.hoteles.Hotel4Estrellas;
 
 
 public class Hotel4Servicio extends HotelServicio {

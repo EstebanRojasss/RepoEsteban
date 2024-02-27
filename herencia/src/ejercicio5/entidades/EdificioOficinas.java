@@ -84,7 +84,7 @@ un piso y cuantas en todo el edificio.
         int cantidadDePersonasxPiso = getCantidadDePersonasxOficina() * getNumeroOficinas();
         int cantPersonasEdificio = cantidadDePersonasxPiso * getNumeroDePisos();
         System.out.println("La cantidad de personas que entrarian en un piso son: " + cantidadDePersonasxPiso);
-        System.out.println("La cantiad de personas que entrarian en el edificio son: "+ cantPersonasEdificio);
+        System.out.println("La cantidad de personas que entrarian en el edificio son: "+ cantPersonasEdificio);
     }
 
 }

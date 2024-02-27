@@ -5,7 +5,7 @@ import ejercicio6.entidades.Alojamiento;
 import java.util.Scanner;
 
 public class AlojamientoServicio {
-    Scanner sc = new Scanner(System.in).useDelimiter("\n");
+   protected Scanner sc = new Scanner(System.in).useDelimiter("\n");
    public Alojamiento nuevoAlojamiento() {
        Alojamiento alojamiento = new Alojamiento();
        System.out.println("===========================================");
