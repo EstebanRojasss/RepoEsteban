@@ -50,17 +50,5 @@ public  class Hotel extends Alojamiento{
     public void setPrecioHabitaciones(double precioHabitaciones) {
         this.precioHabitaciones = precioHabitaciones;
     }
-    @Override
-    public String toString() {
-        return "Hotel{" +
-                "cantidadHabitaciones=" + cantidadHabitaciones +
-                ", numeroCamas=" + numeroCamas +
-                ", cantidadPisos=" + cantidadPisos +
-                ", precioHabitaciones=" + precioHabitaciones +
-                ", nombre='" + nombre + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", localidad='" + localidad + '\'' +
-                ", gerente='" + gerente + '\'' +
-                '}';
-    }
+
 }

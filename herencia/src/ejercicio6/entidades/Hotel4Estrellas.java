@@ -1,9 +1,9 @@
 package ejercicio6.entidades;
 
 public class Hotel4Estrellas extends Hotel {
-    private char gimnasio;
-    private String nombreRestaurante;
-    private int restauranteCapacidad;
+    protected char gimnasio;
+    protected String nombreRestaurante;
+    protected int restauranteCapacidad;
 
     public Hotel4Estrellas() {
 
@@ -41,4 +41,19 @@ public class Hotel4Estrellas extends Hotel {
         this.restauranteCapacidad = restauranteCapacidad;
     }
 
+    @Override
+    public String toString() {
+        return "Hotel4Estrellas: " +
+                "\nNombre: " + nombre +
+                "\nDireccion: " + direccion +
+                "\nLocalidad: " + localidad +
+                "\nGerente: " + gerente +
+                "\nCantidadHabitaciones: " + cantidadHabitaciones +
+                "\nNumeroCamas: " + numeroCamas +
+                "\nCantidadPisos: " + cantidadPisos +
+                "\nPrecioHabitaciones: " + precioHabitaciones +
+                "\nRestauranteCapacidad: " + restauranteCapacidad +
+                "\nGimnasio: " + gimnasio +
+                "\nNombreRestaurante: " + nombreRestaurante;
+    }
 }

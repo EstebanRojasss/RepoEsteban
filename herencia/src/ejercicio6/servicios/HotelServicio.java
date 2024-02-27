@@ -15,12 +15,15 @@ public class HotelServicio extends AlojamientoServicio{
         System.out.println("Ingrese la cantidad de habitaciones: ");
         hotel.setCantidadHabitaciones(sc.nextInt());
         System.out.println("Ingrese el numero de camas: ");
-        hotel.setCantidadPisos(sc.nextInt());
+        hotel.setNumeroCamas(sc.nextInt());
         System.out.println("Ingrese la cantidad de pisos: ");
         hotel.setCantidadPisos(sc.nextInt());
-        System.out.println("Ingrese el precio de las habitaciones: ");
-        hotel.setPrecioHabitaciones(sc.nextDouble());
+        hotel.setPrecioHabitaciones(precioHabitacion());
         return hotel;
+    }
+
+    public double precioHabitacion(){
+        return (50 + datosHotel().getPrecioHabitaciones());
     }
 
 

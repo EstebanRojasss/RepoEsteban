@@ -1,6 +1,5 @@
 package ejercicio6.servicios;
 
-import ejercicio6.entidades.Hotel;
 import ejercicio6.entidades.Hotel4Estrellas;
 import ejercicio6.entidades.Hotel5Estrellas;
 
@@ -15,27 +14,19 @@ public class Hotel5Servicio extends Hotel4Servicio{
         hotel5Estrellas.setGimnasio(hotelEstrellas.getGimnasio());
         hotel5Estrellas.setNombreRestaurante(hotelEstrellas.getNombreRestaurante());
         hotel5Estrellas.setRestauranteCapacidad(hotelEstrellas.getRestauranteCapacidad());
+        hotel5Estrellas.setNumeroCamas(hotelEstrellas.getNumeroCamas());
+        hotel5Estrellas.setCantidadPisos(hotelEstrellas.getCantidadPisos());
         System.out.println("Ingrese la cantidad de salones de conferencia: ");
         hotel5Estrellas.setCantSalonesDeConferencia(sc.nextInt());
         System.out.println("Ingrese la cantidad de suites: ");
         hotel5Estrellas.setCantSuites(sc.nextInt());
         System.out.println("Ingrese la cantidad de limosinas: ");
         hotel5Estrellas.setCantLimosinas(sc.nextInt());
+        hotel5Estrellas.setPrecioHabitaciones(hotelEstrellas.getPrecioHabitaciones() + valorAgregadoLimosina(hotel5Estrellas));
         return hotel5Estrellas;
     }
 
-    public void precioHabitacion(Hotel hotel, Hotel4Estrellas hotelEstrellas) {
-        super.precioHabitacion(hotel, hotelEstrellas);
-        hotel.setPrecioHabitaciones(hotel.getPrecioHabitaciones() + 15);
-    }
-
-    @Override
-    public int valorAgregadoRestaurante(Hotel4Estrellas hotelEstrellas) {
-        return super.valorAgregadoRestaurante(hotelEstrellas);
-    }
-
-    @Override
-    public int valorAgregadoGimnasio(Hotel4Estrellas hotelEstrellas) {
-        return super.valorAgregadoGimnasio(hotelEstrellas);
+    public double valorAgregadoLimosina(Hotel5Estrellas hotel5Estrellas){
+        return hotel5Estrellas.getCantLimosinas() * 15;
     }
 }

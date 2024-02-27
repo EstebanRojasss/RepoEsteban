@@ -38,4 +38,23 @@ public class Hotel5Estrellas extends Hotel4Estrellas{
     public void setCantLimosinas(int cantLimosinas) {
         this.cantLimosinas = cantLimosinas;
     }
+
+    @Override
+    public String toString() {
+        return "Hotel5Estrellas{" +
+                "\nNombre: " + nombre +
+                "\nDireccion: " + direccion +
+                "\nLocalidad: " + localidad +
+                "\nGerente: " + gerente +
+                "\nCantidadHabitaciones: " + cantidadHabitaciones +
+                "\nNumeroCamas: " + numeroCamas +
+                "\nCantidadPisos: " + cantidadPisos +
+                "\nPrecioHabitaciones: " + precioHabitaciones +
+                "\nRestauranteCapacidad: " + restauranteCapacidad +
+                "\nGimnasio: " + gimnasio +
+                "\nNombreRestaurante: " + nombreRestaurante +
+                "\nCantidad Salones de Conferencia: " + cantSalonesDeConferencia +
+                "\nCantidad Suites: " + cantSuites +
+                "\nCantiad Limosinas: " + cantLimosinas ;
+    }
 }

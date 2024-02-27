@@ -1,4 +1,7 @@
 package ejercicio6.entidades;
+
+import ejercicio6.servicios.Hotel5Servicio;
+
 /*
  Una compañía de promociones turísticas desea mantener información sobre la
 infraestructura de alojamiento para turistas, de forma tal que los clientes puedan
@@ -52,6 +55,8 @@ criterios:
  */
 public class Main {
     public static void main(String[]args){
-
+        Hotel5Servicio hotel5S = new Hotel5Servicio();
+        Hotel5Estrellas hotel5Estrellas = hotel5S.datos5Estrellas();
+        System.out.println(hotel5Estrellas);
     }
 }

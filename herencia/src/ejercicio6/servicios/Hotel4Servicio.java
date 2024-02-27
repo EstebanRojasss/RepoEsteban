@@ -12,6 +12,9 @@ public class Hotel4Servicio extends HotelServicio {
         hotelEstrellas.setDireccion(hotel.getDireccion());
         hotelEstrellas.setLocalidad(hotel.getLocalidad());
         hotelEstrellas.setGerente(hotel.getGerente());
+        hotelEstrellas.setCantidadHabitaciones(hotel.getCantidadHabitaciones());
+        hotelEstrellas.setNumeroCamas(hotel.getNumeroCamas());
+        hotelEstrellas.setCantidadPisos(hotel.getCantidadPisos());
         System.out.println("El gimnasio es de tipo A o B: ");
         char tipoGym;
         do {
@@ -31,12 +34,10 @@ public class Hotel4Servicio extends HotelServicio {
         hotelEstrellas.setNombreRestaurante(sc.next());
         System.out.println("Ingrese la capacidad del restaurante: ");
         hotelEstrellas.setRestauranteCapacidad(sc.nextInt());
+        hotelEstrellas.setPrecioHabitaciones(hotel.getPrecioHabitaciones()
+                + valorAgregadoRestaurante(hotelEstrellas)
+                + valorAgregadoGimnasio(hotelEstrellas));
         return hotelEstrellas;
-    }
-    public void precioHabitacion(Hotel hotel, Hotel4Estrellas hotelEstrellas){
-        hotel.setPrecioHabitaciones(50 + (hotel.getCantidadHabitaciones()) +
-                valorAgregadoGimnasio(hotelEstrellas) +
-                valorAgregadoRestaurante(hotelEstrellas));
     }
 
     public int valorAgregadoRestaurante(Hotel4Estrellas hotelEstrellas) {
