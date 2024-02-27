@@ -41,7 +41,7 @@ public class Hotel5Estrellas extends Hotel4Estrellas{
 
     @Override
     public String toString() {
-        return "Hotel5Estrellas{" +
+        return "================Hotel 5 Estrellas================" +
                 "\nNombre: " + nombre +
                 "\nDireccion: " + direccion +
                 "\nLocalidad: " + localidad +
@@ -49,12 +49,12 @@ public class Hotel5Estrellas extends Hotel4Estrellas{
                 "\nCantidadHabitaciones: " + cantidadHabitaciones +
                 "\nNumeroCamas: " + numeroCamas +
                 "\nCantidadPisos: " + cantidadPisos +
-                "\nPrecioHabitaciones: " + precioHabitaciones +
                 "\nRestauranteCapacidad: " + restauranteCapacidad +
                 "\nGimnasio: " + gimnasio +
                 "\nNombreRestaurante: " + nombreRestaurante +
                 "\nCantidad Salones de Conferencia: " + cantSalonesDeConferencia +
                 "\nCantidad Suites: " + cantSuites +
-                "\nCantiad Limosinas: " + cantLimosinas ;
+                "\nCantiad Limosinas: " + cantLimosinas +
+                "\nPrecioHabitaciones: " + precioHabitaciones;
     }
 }

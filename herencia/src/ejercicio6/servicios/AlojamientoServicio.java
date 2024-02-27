@@ -19,4 +19,5 @@ public class AlojamientoServicio {
        alojamiento.setGerente(sc.next());
        return alojamiento;
    }
+
 }
