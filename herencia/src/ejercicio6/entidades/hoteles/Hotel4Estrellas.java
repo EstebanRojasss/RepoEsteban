@@ -43,7 +43,7 @@ public class Hotel4Estrellas extends Hotel {
 
     @Override
     public String toString() {
-        return "================Hotel4Estrellas================" +
+        return "================Hotel 4 Estrellas================" +
                 "\nNombre: " + nombre +
                 "\nDireccion: " + direccion +
                 "\nLocalidad: " + localidad +

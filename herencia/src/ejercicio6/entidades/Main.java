@@ -1,7 +1,16 @@
 package ejercicio6.entidades;
 
+import ejercicio6.entidades.extraHotel.Camping;
+import ejercicio6.entidades.extraHotel.Residencia;
+import ejercicio6.entidades.hoteles.Hotel;
+import ejercicio6.entidades.hoteles.Hotel4Estrellas;
 import ejercicio6.entidades.hoteles.Hotel5Estrellas;
+import ejercicio6.servicios.hotelesServicio.Hotel4Servicio;
 import ejercicio6.servicios.hotelesServicio.Hotel5Servicio;
+import ejercicio6.servicios.serviciosExtraHoteleros.CampingServicio;
+import ejercicio6.servicios.serviciosExtraHoteleros.ResidenciaServicio;
+
+import java.util.ArrayList;
 
 /*
  Una compañía de promociones turísticas desea mantener información sobre la
@@ -55,11 +64,54 @@ criterios:
 • todos las residencias que tienen descuento.
  */
 public class Main {
-    public static void main(String[]args){
+    public static void main(String[] args) {
         Hotel5Servicio hotel5S = new Hotel5Servicio();
-        Hotel5Estrellas hotel5Estrellas = hotel5S.datos5Estrellas();
-        System.out.println(hotel5Estrellas);
+        Hotel4Servicio hotel4S = new Hotel4Servicio();
+        CampingServicio campingS = new CampingServicio();
+        ResidenciaServicio residenciaS = new ResidenciaServicio();
+        ArrayList<Alojamiento> alojamientos = new ArrayList<>();
+
+        // AGREGAR ALOJAMIENTOS
+        for (int i = 0; i < 2; i++) {
+            System.out.println("================HOTEL 5 ESTRELLAS================");
+            Hotel5Estrellas hotel5Estrellas = hotel5S.datos5Estrellas();
+            alojamientos.add(hotel5Estrellas);
+            System.out.println("================HOTEL 4 ESTRELLAS================");
+            Hotel4Estrellas hotel4Estrellas = hotel4S.datosHotelEstrellas();
+            alojamientos.add(hotel4Estrellas);
+            System.out.println("================CAMPING================");
+            Camping camping = campingS.datosCamping();
+            alojamientos.add(camping);
+            System.out.println("================RESIDENCIA================");
+            Residencia residencia = residenciaS.datosResidencia();
+            alojamientos.add(residencia);
+        }
+
+        // MOSTRAR TODOS LOS ALOJAMIENTOS DISPONIBLES
+        System.out.println("================ALOJAMIENTOS DISPONIBLES================");
+        for (Alojamiento alojamiento : alojamientos) {
+            if (alojamiento instanceof Hotel5Estrellas hotel5) {
+                System.out.println(hotel5);
+            } else if (alojamiento instanceof Hotel4Estrellas hotel4) {
+                System.out.println(hotel4);
+            } else if (alojamiento instanceof Camping camping) {
+                System.out.println(camping);
+            } else if (alojamiento instanceof Residencia residencia) {
+                System.out.println(residencia);
+            }
+        }
+
+        // MOSTRAR HOTEL MAS CAROS A MAS BARATOS
+        System.out.println("================HOTELES DE MAYOR COSTO A MENOR================");
+
     }
 
-
+    public static ArrayList<Hotel> hotelesMayorAMenor(ArrayList<Alojamiento>alojamientos){
+        ArrayList<Hotel> hoteles = new ArrayList<>();
+        for(Alojamiento alojamiento : alojamientos){
+            if(alojamiento instanceof Hotel hotel){
+                hoteles.add(hotel);
+            }
+        }
+    }
 }

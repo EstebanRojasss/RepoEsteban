@@ -33,4 +33,5 @@ public class ExtraHotel extends Alojamiento {
     public void setCantidadMetros2(int cantidadMetros2) {
         this.cantidadMetros2 = cantidadMetros2;
     }
+
 }
