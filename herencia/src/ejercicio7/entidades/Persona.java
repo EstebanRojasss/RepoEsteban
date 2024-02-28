@@ -1,16 +1,19 @@
 package ejercicio7.entidades;
 
+import ejercicio7.enums.ESTADO_CIVIL;
+
+import java.util.Scanner;
+
 public abstract class Persona {
     protected String nombre;
     protected String apellido;
     protected int numId;
-    protected String estadoCivil;
+    protected ESTADO_CIVIL estadoCivil;
 
     public Persona() {
-
     }
 
-    public Persona(String nombre, String apellido, int numId, String estadoCivil) {
+    public Persona(String nombre, String apellido, int numId, ESTADO_CIVIL estadoCivil) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.numId = numId;
@@ -41,11 +44,11 @@ public abstract class Persona {
         this.numId = numId;
     }
 
-    public String getEstadoCivil() {
+    public ESTADO_CIVIL getEstadoCivil() {
         return estadoCivil;
     }
 
-    public void setEstadoCivil(String estadoCivil) {
+    public void setEstadoCivil(ESTADO_CIVIL estadoCivil) {
         this.estadoCivil = estadoCivil;
     }
 }
