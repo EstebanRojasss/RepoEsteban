@@ -23,7 +23,7 @@ public class HotelServicio extends AlojamientoServicio {
         return hotel;
     }
 
-    public double precioHabitacion(Hotel hotel){
+    public Integer precioHabitacion(Hotel hotel){
         int kpcidadPersonasXPiso = hotel.getCantidadHabitaciones() * hotel.getNumeroCamas();
         int kpcidadTotal = kpcidadPersonasXPiso * hotel.getCantidadPisos();
         return (50 + (kpcidadTotal));

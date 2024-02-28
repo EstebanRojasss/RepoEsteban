@@ -10,7 +10,7 @@ public class Hotel4Estrellas extends Hotel {
     }
 
 
-    public Hotel4Estrellas(String nombre, String direccion, String localidad, String gerente, int cantidadHabitaciones, int numeroCamas, int cantidadPisos, double precioHabitaciones, char gimnasio, String nombreRestaurante, int restauranteCapacidad) {
+    public Hotel4Estrellas(String nombre, String direccion, String localidad, String gerente, int cantidadHabitaciones, int numeroCamas, int cantidadPisos, Integer precioHabitaciones, char gimnasio, String nombreRestaurante, int restauranteCapacidad) {
         super(nombre, direccion, localidad, gerente, cantidadHabitaciones, numeroCamas, cantidadPisos, precioHabitaciones);
         this.gimnasio = gimnasio;
         this.nombreRestaurante = nombreRestaurante;

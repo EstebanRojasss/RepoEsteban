@@ -4,7 +4,7 @@ import ejercicio6.entidades.Alojamiento;
 
 import java.util.Comparator;
 
-public  class Hotel extends Alojamiento {
+public class Hotel extends Alojamiento {
     protected int cantidadHabitaciones;
     protected int numeroCamas;
     protected int cantidadPisos;
@@ -54,6 +54,7 @@ public  class Hotel extends Alojamiento {
     public void setPrecioHabitaciones(Integer precioHabitaciones) {
         this.precioHabitaciones = precioHabitaciones;
     }
+
     public Comparator<Hotel> compararPrecios = new Comparator<Hotel>() {
         @Override
         public int compare(Hotel o1, Hotel o2) {

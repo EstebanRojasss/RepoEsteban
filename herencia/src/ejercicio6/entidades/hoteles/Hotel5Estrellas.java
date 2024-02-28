@@ -8,7 +8,7 @@ public class Hotel5Estrellas extends Hotel4Estrellas{
     public Hotel5Estrellas() {
     }
 
-    public Hotel5Estrellas(String nombre, String direccion, String localidad, String gerente, int cantidadHabitaciones, int numeroCamas, int cantidadPisos, double precioHabitaciones, char gimnasio, String nombreRestaurante, int restauranteCapacidad, int cantSalonesDeConferencia, int cantSuites, int cantLimosinas) {
+    public Hotel5Estrellas(String nombre, String direccion, String localidad, String gerente, int cantidadHabitaciones, int numeroCamas, int cantidadPisos, Integer precioHabitaciones, char gimnasio, String nombreRestaurante, int restauranteCapacidad, int cantSalonesDeConferencia, int cantSuites, int cantLimosinas) {
         super(nombre, direccion, localidad, gerente, cantidadHabitaciones, numeroCamas, cantidadPisos, precioHabitaciones, gimnasio, nombreRestaurante, restauranteCapacidad);
         this.cantSalonesDeConferencia = cantSalonesDeConferencia;
         this.cantSuites = cantSuites;

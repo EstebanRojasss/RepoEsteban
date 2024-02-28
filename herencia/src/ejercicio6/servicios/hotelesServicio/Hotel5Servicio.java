@@ -11,6 +11,7 @@ public class Hotel5Servicio extends Hotel4Servicio {
         hotel5Estrellas.setDireccion(hotelEstrellas.getDireccion());
         hotel5Estrellas.setLocalidad(hotelEstrellas.getLocalidad());
         hotel5Estrellas.setGerente(hotelEstrellas.getGerente());
+        hotel5Estrellas.setCantidadHabitaciones(hotelEstrellas.getCantidadHabitaciones());
         hotel5Estrellas.setGimnasio(hotelEstrellas.getGimnasio());
         hotel5Estrellas.setNombreRestaurante(hotelEstrellas.getNombreRestaurante());
         hotel5Estrellas.setRestauranteCapacidad(hotelEstrellas.getRestauranteCapacidad());
@@ -27,7 +28,7 @@ public class Hotel5Servicio extends Hotel4Servicio {
         return hotel5Estrellas;
     }
 
-    public double valorAgregadoLimosina(Hotel5Estrellas hotel5Estrellas) {
+    public Integer valorAgregadoLimosina(Hotel5Estrellas hotel5Estrellas) {
         return hotel5Estrellas.getCantLimosinas() * 15;
     }
 }
