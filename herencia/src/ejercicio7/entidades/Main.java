@@ -1,4 +1,8 @@
 package ejercicio7.entidades;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
 /*
 Sistema Gestión Facultad. Se pretende realizar una aplicación para una facultad
 que gestione la información sobre las personas vinculadas con la misma y que se
@@ -29,7 +33,8 @@ desarrollados.
  */
 public class Main {
     public static void main(String []args){
-
+        Scanner sc = new Scanner(System.in).useDelimiter("\n");
+        System.out.println(LocalDate.parse(sc.next()));
     }
 }
 

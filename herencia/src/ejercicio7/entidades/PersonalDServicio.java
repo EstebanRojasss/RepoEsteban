@@ -6,21 +6,21 @@ import ejercicio7.enums.SECCION;
 import java.time.LocalDate;
 
 public class PersonalDServicio extends Empleado{
-    private SECCION secciones;
+    private SECCION seccion;
 
     public PersonalDServicio() {
     }
 
-    public PersonalDServicio(String nombre, String apellido, int numId, ESTADO_CIVIL estadoCivil, LocalDate anioIncorporacion, int numeroDespacho, SECCION secciones) {
+    public PersonalDServicio(String nombre, String apellido, int numId, ESTADO_CIVIL estadoCivil, LocalDate anioIncorporacion, int numeroDespacho, SECCION seccion) {
         super(nombre, apellido, numId, estadoCivil, anioIncorporacion, numeroDespacho);
-        this.secciones = secciones;
+        this.seccion = seccion;
     }
 
-    public SECCION getSecciones() {
-        return secciones;
+    public SECCION getSeccion() {
+        return seccion;
     }
 
-    public void setSecciones(SECCION secciones) {
-        this.secciones = secciones;
+    public void setSeccion(SECCION seccion) {
+        this.seccion = seccion;
     }
 }
