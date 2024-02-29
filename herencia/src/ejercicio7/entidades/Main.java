@@ -1,7 +1,13 @@
 package ejercicio7.entidades;
 
-import java.time.LocalDate;
+import ejercicio7.servicios.EstudianteServicio;
+import ejercicio7.servicios.PersonaServicio;
+import ejercicio7.servicios.PersonalServicio;
+import ejercicio7.servicios.ProfesorServicio;
+
+import java.util.ArrayList;
 import java.util.Scanner;
+
 
 /*
 Sistema Gestión Facultad. Se pretende realizar una aplicación para una facultad
@@ -32,9 +38,51 @@ de prueba que instancie objetos de los distintos tipos y pruebe los métodos
 desarrollados.
  */
 public class Main {
-    public static void main(String []args){
-        Scanner sc = new Scanner(System.in).useDelimiter("\n");
-        
+    public static void main(String[] args) {
+        Scanner scaner = new Scanner(System.in);
+        EstudianteServicio servicioDeEstudiante = new EstudianteServicio();
+        PersonalServicio servicioDePersonal = new PersonalServicio();
+        ProfesorServicio servicioDeProfesor = new ProfesorServicio();
+        PersonaServicio servicioDePersona = new PersonaServicio();
+
+        ArrayList<Persona> personas = new ArrayList<>();
+        personas.add(servicioDeEstudiante.nuevoEstudiante());
+        personas.add(servicioDePersonal.nuevoPersonalDServicio());
+        personas.add(servicioDeProfesor.nuevoProfe());
+        int opc;
+        do {
+            System.out.println("=========MENU DE OPCIONES DE APLICACION=========");
+            System.out.println("1. Cambiar estado civil.");
+            System.out.println("2. Reasignacion de despacho.");
+            System.out.println("3. Matricular a nuevo curso.");
+            System.out.println("4. Cambiar departamento de profesor.");
+            System.out.println("5. Traslado de sección de un empleado del personal de servicio.");
+            opc = scaner.nextInt();
+            switch (opc) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+            }
+        } while (opc != 1 && opc != 2 && opc != 3 && opc != 4 && opc != 5);
+        for (Persona persona : personas) {
+            if ()
+        }
+    }
+
+    public static void opcionesDeCambio(Scanner scaner){
+        int opc2;
+        do {
+            opc2 = scaner.nextInt();
+            System.out.println("Cambiar estado civil de: 1) Estudiante | 2) Profesor | 3) Personal de servicio");
+            System.out.print("Ingresar opcion: ");
+        } while (opc2 != 1 && opc2 != 2 && opc2 != 3);
     }
 }
 

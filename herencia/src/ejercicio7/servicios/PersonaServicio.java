@@ -33,7 +33,7 @@ public class PersonaServicio {
         };
     }
 
-    protected void cambiarEstadoCivil(Persona persona) {
+    public void cambiarEstadoCivil(Persona persona) {
         System.out.println("=========CAMBIAR ESTADO CIVIL=========");
         do {
             estadoCivil(scanner.next());
