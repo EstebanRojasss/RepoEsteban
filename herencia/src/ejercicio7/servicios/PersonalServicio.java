@@ -22,7 +22,6 @@ public class PersonalServicio extends EmpleadoServicio {
         return personal;
     }
 
-
     private SECCION seccionDispo(int opcion) {
         SECCION[] secciones = SECCION.values();
         System.out.println("=========SECCIONES=========");
@@ -36,5 +35,12 @@ public class PersonalServicio extends EmpleadoServicio {
                 case 4 -> SECCION.CONSERJE;
                 default -> null;
             };
+    }
+
+    public void trasladoSeccion(PersonalDServicio personalDServicio){
+        System.out.println("=========TRASLADO DE SECCION A PERSONAL=========");
+        do{
+            seccionDispo(sc.nextInt());
+        }while(personalDServicio.getSeccion() != null);
     }
 }

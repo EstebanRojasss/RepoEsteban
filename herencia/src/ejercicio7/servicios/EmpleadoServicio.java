@@ -1,14 +1,11 @@
 package ejercicio7.servicios;
 
 import ejercicio7.entidades.Empleado;
-import ejercicio7.enums.ESTADO_CIVIL;
-
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class EmpleadoServicio {
-    Scanner sc = new Scanner(System.in).useDelimiter("\n");
-
+public class EmpleadoServicio extends PersonaServicio{
+   protected Scanner sc = new Scanner(System.in).useDelimiter("\n");
     public Empleado nuevoEmpleado() {
         Empleado empleado = new Empleado();
         System.out.println("=========DATOS DE EMPLEADO=========");
@@ -25,16 +22,14 @@ public class EmpleadoServicio {
 
         System.out.print("Ingrese la fecha de incorporacion del funcionario / AAAA-MM-DD (INCLUIR GUIONES): ");
         empleado.setAnioIncorporacion(LocalDate.parse(sc.next()));
+        System.out.print("Ingrese el numero de despacho: ");
         empleado.setNumeroDespacho(sc.nextInt());
         return empleado;
     }
 
-    public ESTADO_CIVIL estadoCivil(String estadoCivilIngreso) {
-        for (ESTADO_CIVIL estadoCivil : ESTADO_CIVIL.values()) {
-            if (estadoCivilIngreso.equalsIgnoreCase(estadoCivil.toString())) {
-                return estadoCivil;
-            }
-        }
-        return null;
+    public void reasignacionDespacho(Empleado empleado){
+        System.out.println("=========REASIGNACION DE DESPACHO=========");
+        System.out.print("Ingrese el numero de despacho para reasignar: ");
+        empleado.setNumeroDespacho(sc.nextInt());
     }
 }
