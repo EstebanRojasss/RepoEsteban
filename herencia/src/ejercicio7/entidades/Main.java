@@ -7,8 +7,6 @@ import ejercicio7.servicios.ProfesorServicio;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
-
 /*
 Sistema Gestión Facultad. Se pretende realizar una aplicación para una facultad
 que gestione la información sobre las personas vinculadas con la misma y que se
@@ -40,15 +38,21 @@ desarrollados.
 public class Main {
     public static void main(String[] args) {
         Scanner scaner = new Scanner(System.in);
+        // IMPORTACION DE SERVICIOS
         EstudianteServicio servicioDeEstudiante = new EstudianteServicio();
         PersonalServicio servicioDePersonal = new PersonalServicio();
         ProfesorServicio servicioDeProfesor = new ProfesorServicio();
         PersonaServicio servicioDePersona = new PersonaServicio();
+        // INSTANCIA DE OBJETOS PERSONA
+        Estudiante estudiante = servicioDeEstudiante.nuevoEstudiante();
+        PersonalDServicio personalDServicio = servicioDePersonal.nuevoPersonalDServicio();
+        Profesor profesor = servicioDeProfesor.nuevoProfe();
 
+        //GUARDAR DIFERENTES PERSONAS A LA LISTA
         ArrayList<Persona> personas = new ArrayList<>();
-        personas.add(servicioDeEstudiante.nuevoEstudiante());
-        personas.add(servicioDePersonal.nuevoPersonalDServicio());
-        personas.add(servicioDeProfesor.nuevoProfe());
+        personas.add(estudiante);
+        personas.add(personalDServicio);
+        personas.add(profesor);
         int opc;
         do {
             System.out.println("=========MENU DE OPCIONES DE APLICACION=========");
@@ -60,29 +64,61 @@ public class Main {
             opc = scaner.nextInt();
             switch (opc) {
                 case 1:
+                    int opc2;
+                    do {
+                        System.out.println("Cambiar estado civil de: " +
+                                "| 1) Estudiante " +
+                                "| 2) Profesor " +
+                                "| 3) Personal de servicio");
+                        System.out.print("Ingresar opcion: ");
+                        System.out.println("=================================");
+                        opc2 = scaner.nextInt();
+                        switch (opc2) {
+                            case 1 -> servicioDePersona.cambiarEstadoCivil(estudiante);
+                            case 2 -> servicioDePersona.cambiarEstadoCivil(profesor);
+                            case 3 -> servicioDePersona.cambiarEstadoCivil(personalDServicio);
+                        }
+                    } while (opc2 != 1 && opc2 != 2 && opc2 != 3);
                     break;
                 case 2:
+                    int opc3;
+                    do {
+                        opc3 = scaner.nextInt();
+                        System.out.println("Reasignar despacho: " +
+                                "| 1) Profesor " +
+                                "| 2) Personal de servicio");
+                        System.out.print("Ingresar opcion: ");
+                        switch (opc3) {
+                            case 1 -> servicioDeProfesor.reasignacionDespacho(profesor);
+                            case 2 -> servicioDePersonal.reasignacionDespacho(profesor);
+                        }
+                    } while (opc3 != 1 && opc3 != 2);
+
                     break;
                 case 3:
+                    servicioDeEstudiante.matricularNuevoCurso(estudiante);
                     break;
                 case 4:
+                    servicioDeProfesor.cambioDepartamento(profesor);
                     break;
                 case 5:
+                    servicioDePersonal.trasladoSeccion(personalDServicio);
                     break;
             }
         } while (opc != 1 && opc != 2 && opc != 3 && opc != 4 && opc != 5);
-        for (Persona persona : personas) {
-            if ()
-        }
-    }
 
-    public static void opcionesDeCambio(Scanner scaner){
-        int opc2;
-        do {
-            opc2 = scaner.nextInt();
-            System.out.println("Cambiar estado civil de: 1) Estudiante | 2) Profesor | 3) Personal de servicio");
-            System.out.print("Ingresar opcion: ");
-        } while (opc2 != 1 && opc2 != 2 && opc2 != 3);
+        for(Persona persona : personas){
+            if(persona instanceof Estudiante){
+                System.out.println(estudiante);
+                System.out.println("=================================");
+            }else if(persona instanceof Profesor){
+                System.out.println(profesor);
+                System.out.println("=================================");
+            }else if(persona instanceof PersonalDServicio){
+                System.out.println(personalDServicio);
+                System.out.println("=================================");
+            }
+        }
     }
 }
 

@@ -23,4 +23,16 @@ public class PersonalDServicio extends Empleado{
     public void setSeccion(SECCION seccion) {
         this.seccion = seccion;
     }
+
+    @Override
+    public String toString() {
+        return "PersonalDeServicio " +
+                "\nNombre: " + nombre +
+                "\nApellido: " + apellido +
+                "\nNumero Id: " + numId +
+                "\nEstado Civil: " + estadoCivil +
+                "\nSeccion: " + seccion +
+                "\nAnho de incorporacion: " + anioIncorporacion +
+                "\nNumero de despacho: " + numeroDespacho ;
+    }
 }

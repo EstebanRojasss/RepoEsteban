@@ -21,4 +21,14 @@ public class Estudiante extends Persona{
     public void setCurso(CURSOS curso) {
         this.curso = curso;
     }
+
+    @Override
+    public String toString() {
+        return "Estudiante " +
+                "\nNombre: " + nombre +
+                "\nApellido: " + apellido +
+                "\nNumero Id: " + numId +
+                "\nEstado Civil: " + estadoCivil +
+                "\nCurso: " + curso;
+    }
 }

@@ -23,4 +23,16 @@ public class Profesor extends Empleado{
     public void setCursos(CURSOS cursos) {
         this.cursos = cursos;
     }
+
+    @Override
+    public String toString() {
+        return "Profesor " +
+                "\nNombre: " + nombre +
+                "\nApellido: " + apellido +
+                "\nNumero Id: " + numId +
+                "\nEstado Civil: " + estadoCivil +
+                "\nAnho de incorporacion: " + anioIncorporacion +
+                "\nNumero de despacho: " + numeroDespacho +
+                "\nCurso: " + cursos ;
+    }
 }
