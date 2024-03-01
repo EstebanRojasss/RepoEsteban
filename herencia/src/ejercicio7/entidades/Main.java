@@ -61,6 +61,7 @@ public class Main {
             System.out.println("3. Matricular a nuevo curso.");
             System.out.println("4. Cambiar departamento de profesor.");
             System.out.println("5. Traslado de sección de un empleado del personal de servicio.");
+            System.out.println("6. Salir del menu.");
             opc = scaner.nextInt();
             switch (opc) {
                 case 1:
@@ -70,8 +71,8 @@ public class Main {
                                 "| 1) Estudiante " +
                                 "| 2) Profesor " +
                                 "| 3) Personal de servicio");
-                        System.out.print("Ingresar opcion: ");
                         System.out.println("=================================");
+                        System.out.print("Ingresar opcion: ");
                         opc2 = scaner.nextInt();
                         switch (opc2) {
                             case 1 -> servicioDePersona.cambiarEstadoCivil(estudiante);
@@ -83,11 +84,11 @@ public class Main {
                 case 2:
                     int opc3;
                     do {
-                        opc3 = scaner.nextInt();
                         System.out.println("Reasignar despacho: " +
                                 "| 1) Profesor " +
                                 "| 2) Personal de servicio");
                         System.out.print("Ingresar opcion: ");
+                        opc3 = scaner.nextInt();
                         switch (opc3) {
                             case 1 -> servicioDeProfesor.reasignacionDespacho(profesor);
                             case 2 -> servicioDePersonal.reasignacionDespacho(profesor);
@@ -104,9 +105,9 @@ public class Main {
                 case 5:
                     servicioDePersonal.trasladoSeccion(personalDServicio);
                     break;
+                case 6:break;
             }
-        } while (opc != 1 && opc != 2 && opc != 3 && opc != 4 && opc != 5);
-
+        } while (opc != 6);
         for(Persona persona : personas){
             if(persona instanceof Estudiante){
                 System.out.println(estudiante);

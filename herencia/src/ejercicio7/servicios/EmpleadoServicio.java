@@ -30,6 +30,7 @@ public class EmpleadoServicio extends PersonaServicio {
         Scanner sc = new Scanner(System.in).useDelimiter("\n");
         System.out.println("=========REASIGNACION DE DESPACHO=========");
         System.out.print("Ingrese el numero de despacho para reasignar: ");
-        empleado.setNumeroDespacho(sc.nextInt());
+        int despacho = sc.nextInt();
+        empleado.setNumeroDespacho(despacho);
     }
 }
