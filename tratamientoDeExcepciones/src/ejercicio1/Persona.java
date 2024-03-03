@@ -1,6 +1,4 @@
-package nuevoProyecto;
-
-import java.util.Scanner;
+package ejercicio1;
 
 /*Realizar una clase llamada Persona que tenga los siguientes atributos: nombre, edad,
 sexo ('H' hombre, 'M' mujer, 'O' otro), peso y altura. Si el alumno desea añadir algún

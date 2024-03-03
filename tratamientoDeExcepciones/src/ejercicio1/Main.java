@@ -1,6 +1,4 @@
-package nuevoProyecto;
-
-import java.util.ArrayList;
+package ejercicio1;
 
 /* Inicializar un objeto de la clase Persona ejercicio 7 de la guía POO, a null y tratar
 de invocar el método esMayorDeEdad() a través de ese objeto. Luego, englobe el
