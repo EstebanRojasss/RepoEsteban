@@ -1,5 +1,6 @@
 package ejercicio4;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -15,11 +16,32 @@ controlar esa excepción e indicarlo por pantalla. En este último caso también
 debe contar el carácter fallido como un intento.
  */
 public class Main {
-    public static void main(String[]args){
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in).useDelimiter("\n");
         Random random = new Random();
         int numero = (random.nextInt(1, 500));
-        int numeroAingresar = sc.nextInt();
+        int contador = 0;
+        System.out.println("Ingrese el numero que crea que es: ");
+        do {
+            try {
+                contador++;
+                int numeroAingresar = Integer.parseInt(sc.nextLine());
+                if (numeroAingresar < numero) {
+                    System.out.println("El numero es menor. Intente con uno mayor");
+
+                } else if (numeroAingresar > numero) {
+                    System.out.println("El numero es mayor. Intente con uno menor");
+                } else {
+                    System.out.println("El numero es correcto.");
+                    break;
+                }
+            } catch (NumberFormatException n) {
+                System.out.println("Debe ingresar un numero.");
+            }
+            System.out.println("Ingrese el numero: ");
+        } while (true);
+
+        System.out.println("Numero de intentos: " + contador);
 
     }
 }
