@@ -18,30 +18,42 @@ debe contar el carácter fallido como un intento.
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in).useDelimiter("\n");
-        Random random = new Random();
-        int numero = (random.nextInt(1, 500));
-        int contador = 0;
-        System.out.println("Ingrese el numero que crea que es: ");
+//        Random random = new Random();
+//        int numero = (random.nextInt(1, 500));
+//        int contador = 0;
+//        System.out.println("Ingrese el numero que crea que es: ");
+//        do {
+//            try {
+//                contador++;
+//                int numeroAingresar = Integer.parseInt(sc.nextLine());
+//                if (numeroAingresar < numero) {
+//                    System.out.println("El numero es menor. Intente con uno mayor");
+//
+//                } else if (numeroAingresar > numero) {
+//                    System.out.println("El numero es mayor. Intente con uno menor");
+//                } else {
+//                    System.out.println("El numero es correcto.");
+//                    break;
+//                }
+//            } catch (NumberFormatException n) {
+//                System.out.println("Debe ingresar un numero.");
+//            }
+//            System.out.println("Ingrese el numero: ");
+//        } while (true);
+//
+//        System.out.println("Numero de intentos: " + contador);
+        int opcion;
+        boolean bandera = false;
         do {
             try {
-                contador++;
-                int numeroAingresar = Integer.parseInt(sc.nextLine());
-                if (numeroAingresar < numero) {
-                    System.out.println("El numero es menor. Intente con uno mayor");
-
-                } else if (numeroAingresar > numero) {
-                    System.out.println("El numero es mayor. Intente con uno menor");
-                } else {
-                    System.out.println("El numero es correcto.");
-                    break;
-                }
-            } catch (NumberFormatException n) {
+                System.out.println("Ingrese un material del menu para su utilizacion en la armadura: ");
+                System.out.println("MENU DE MATERIALES");
+                opcion = Integer.parseInt(sc.nextLine());
+                bandera = true;
+            } catch (Exception excepcion) {
                 System.out.println("Debe ingresar un numero.");
+                sc.nextLine();
             }
-            System.out.println("Ingrese el numero: ");
-        } while (true);
-
-        System.out.println("Numero de intentos: " + contador);
-
+        } while (!bandera);
     }
 }
