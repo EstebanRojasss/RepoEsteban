@@ -1,6 +1,5 @@
 package ironman_project.servicios;
 
-import ironman_project.entidades.Armadura;
 import ironman_project.entidades.Bota;
 
 import java.util.Scanner;
@@ -12,19 +11,19 @@ public class BotaServicio {
         return bota;
     }
 
-    public int consumoCaminar(Bota bota) {
+    public int consumoBasico(Bota bota) {
         Scanner sc = new Scanner(System.in).useDelimiter("\n");
-        System.out.println("Cantidad de minutos: ");
+        System.out.println("Cantidad de tiempo: ");
         int tiempo = sc.nextInt();
         return bota.getConsumoBateria() * tiempo;
     }
 
     public int consumoCorrer(Bota bota) {
-        return consumoCaminar(bota) * 2;
+        return consumoBasico(bota) * 2;
     }
 
-    public int consumoVolar(Bota bota){
-        return consumoCaminar(bota) * 3;
+    public int consumoDePropulsion(Bota bota){
+        return consumoBasico(bota) * 3;
     }
 
 

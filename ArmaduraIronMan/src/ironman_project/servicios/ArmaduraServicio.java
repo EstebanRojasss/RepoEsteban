@@ -11,6 +11,7 @@ public class ArmaduraServicio {
     public static Armadura crearArmadura() {
         Scanner sc = new Scanner(System.in).useDelimiter("\n");
         BotaServicio bota = new BotaServicio();
+        GuanteServicio guante = new GuanteServicio();
         Armadura armadura = new Armadura();
         System.out.println("Ingrese el color primario de la armadura: ");
         armadura.setColorPrimario(sc.next());
@@ -64,6 +65,12 @@ public class ArmaduraServicio {
         } while (!bandera);
         armadura.setNivelSalud(100);
         armadura.setBota(bota.establecerConsumo());
+        armadura.setGuante(guante.establecerConsumo());
         return armadura;
+    }
+
+
+    public void consumoVuelo(BotaServicio bota, GuanteServicio guante){
+        bota.consumoDePropulsion()
     }
 }
