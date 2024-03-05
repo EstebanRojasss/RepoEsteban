@@ -15,7 +15,6 @@ donde JARVIS susurra cosas al oído de Tony. Cada dispositivo de la armadura de 
 Man (botas, guantes, consola y sintetizador) tienen un consumo de energía asociado
  */
 public class IronMan_Main {
-    public static void main(String[]args){
-
-    }
+    private String color;
+    private
 }
