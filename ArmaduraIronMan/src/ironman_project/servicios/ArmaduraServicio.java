@@ -10,12 +10,13 @@ public class ArmaduraServicio {
 
     public static Armadura crearArmadura() {
         Scanner sc = new Scanner(System.in).useDelimiter("\n");
+        BotaServicio bota = new BotaServicio();
         Armadura armadura = new Armadura();
         System.out.println("Ingrese el color primario de la armadura: ");
         armadura.setColorPrimario(sc.next());
         System.out.println("Ingrese el color secundario de la armadura: ");
         armadura.setColorSecundario(sc.next());
-        armadura.setBateria(30000);
+        armadura.setBateria(90000);
         int opcion;
         boolean bandera = false;
         do {
@@ -61,6 +62,8 @@ public class ArmaduraServicio {
                 sc.nextLine();
             }
         } while (!bandera);
+        armadura.setNivelSalud(100);
+        armadura.setBota(bota.establecerConsumo());
         return armadura;
     }
 }

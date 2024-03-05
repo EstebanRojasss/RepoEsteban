@@ -4,16 +4,22 @@ public class Armadura {
     protected String colorPrimario;
     protected String colorSecundario;
     protected int bateria;
-    protected int resistencia; // 0 - 100
+    protected int resistencia;
+    protected int nivelSalud;
+    protected Bota bota;
+    protected Guante guante;
 
     public Armadura() {
     }
 
-    public Armadura(String colorPrimario, String colorSecundario, int bateria, int resistencia) {
+    public Armadura(String colorPrimario, String colorSecundario, int bateria, int resistencia, int nivelSalud, Bota bota, Guante guante) {
         this.colorPrimario = colorPrimario;
         this.colorSecundario = colorSecundario;
         this.bateria = bateria;
         this.resistencia = resistencia;
+        this.nivelSalud = nivelSalud;
+        this.bota = bota;
+        this.guante = guante;
     }
 
     public String getColorPrimario() {
@@ -46,5 +52,29 @@ public class Armadura {
 
     public void setResistencia(int resistencia) {
         this.resistencia = resistencia;
+    }
+
+    public int getNivelSalud() {
+        return nivelSalud;
+    }
+
+    public void setNivelSalud(int nivelSalud) {
+        this.nivelSalud = nivelSalud;
+    }
+
+    public Bota getBota() {
+        return bota;
+    }
+
+    public void setBota(Bota bota) {
+        this.bota = bota;
+    }
+
+    public Guante getGuante() {
+        return guante;
+    }
+
+    public void setGuante(Guante guante) {
+        this.guante = guante;
     }
 }
