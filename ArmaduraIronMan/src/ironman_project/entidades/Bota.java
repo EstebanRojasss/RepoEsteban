@@ -18,4 +18,5 @@ public class Bota {
         this.consumoBateria = consumoBateria;
     }
 
+
 }

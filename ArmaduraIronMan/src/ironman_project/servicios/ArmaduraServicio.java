@@ -1,6 +1,8 @@
 package ironman_project.servicios;
 
 import ironman_project.entidades.Armadura;
+import ironman_project.entidades.Bota;
+import ironman_project.entidades.Guante;
 import ironman_project.enums.DurezaDeMateriales;
 
 import java.util.InputMismatchException;
@@ -69,8 +71,7 @@ public class ArmaduraServicio {
         return armadura;
     }
 
-
-    public void consumoVuelo(BotaServicio bota, GuanteServicio guante){
-        bota.consumoDePropulsion()
+    public int consumoVuelo(BotaServicio botaS, GuanteServicio guanteS, Bota bota, Guante guante){
+       return botaS.consumoDePropulsion(bota) + guanteS.consumoGuantePropulsion(guante);
     }
 }
