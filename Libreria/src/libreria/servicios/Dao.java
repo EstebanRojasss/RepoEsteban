@@ -13,6 +13,35 @@ public class Dao <T>{
       em = emf.createEntityManager();
   }
   
+  protected void conect(){
+      if(!em.isOpen()) em = emf.createEntityManager();
+  }
+  protected void disconect(){
+      if(em.isOpen())em.close();
+  }
+  
+  public void create(T object){
+      conect();
+      em.getTransaction().begin();
+      em.persist(object);
+      em.getTransaction().commit();
+      disconect();
+  }
+  public void update(T object){
+      conect();
+      em.getTransaction().begin();
+      em.merge(object);
+      em.getTransaction().commit();
+      disconect();
+  }
+  
+  public void delete(T object){
+      conect();
+      em.getTransaction().begin();
+      em.remove(object);
+      em.getTransaction().commit();
+      disconect();
+  }
   
   
 }

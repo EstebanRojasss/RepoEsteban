@@ -3,6 +3,7 @@ package libreria.main;
 import libreria.entidades.Autor;
 import libreria.entidades.Editorial;
 import libreria.entidades.Libro;
+import libreria.servicios.Dao;
 
 
 public class Main {
@@ -10,5 +11,10 @@ public class Main {
       Autor autor = new Autor();
       Editorial editorial = new Editorial();
       Libro libro = new Libro();
+      
+      Dao dao = new Dao();
+      dao.create(autor);
+      dao.create(editorial);
+      dao.create(libro);
   }  
 }
