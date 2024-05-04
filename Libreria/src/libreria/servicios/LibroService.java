@@ -1,5 +1,6 @@
 package libreria.servicios;
 
+import java.util.List;
 import java.util.Scanner;
 import libreria.entidades.Autor;
 import libreria.entidades.Editorial;
@@ -9,7 +10,7 @@ import libreria.repositorios.LibroRepositorio;
 public class LibroService {
 
     LibroRepositorio dao = new LibroRepositorio();
-    private Scanner sc = new Scanner(System.in).useDelimiter("\n");
+    private final Scanner sc = new Scanner(System.in).useDelimiter("\n");
     AutorService as = new AutorService();
     EditorialService es = new EditorialService();
 
@@ -276,5 +277,12 @@ public class LibroService {
 
     public Libro retornarLibro(Long ISBN) {
         return dao.buscarLibroPorISBN(ISBN);
+    }
+    
+    public List<Libro> buscarPorNombreAutor(){
+        System.out.println("Ingrese el nombre del autor.");
+        String nombre = sc.next();
+        List<Libro> libros = dao.buscarLibroPorNombreAutor(nombre);
+        return libros;
     }
 }

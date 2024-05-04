@@ -17,6 +17,16 @@ public class AutorService {
         dao.createAutor(autor);
         return autor;
     }
+    
+    public Autor crearAutor() {
+        System.out.println("Ingrese el nombre del autor: ");
+        String nombre = sc.next();
+        Autor autor = new Autor();
+        autor.setNombre(nombre);
+        autor.setAlta(true);
+        dao.createAutor(autor);
+        return autor;
+    }
 
     public void darBajaorEditar() {
         Long id;

@@ -8,7 +8,18 @@ import libreria.entidades.Editorial;
 public class EditorialService {
      EditorialRepositorio dao = new EditorialRepositorio();
      private Scanner sc = new Scanner(System.in).useDelimiter("\n");
+     
+     
      public Editorial crearEditorial(String nombre){
+         Editorial editorial = new Editorial();
+         editorial.setNombre(nombre);
+         editorial.setAlta(true);
+         dao.createEditorial(editorial);
+         return editorial;
+     }
+     public Editorial crearEditorial(){
+         System.out.println("Ingrese el nombre de la editorial.");
+         String nombre = sc.next();
          Editorial editorial = new Editorial();
          editorial.setNombre(nombre);
          editorial.setAlta(true);
