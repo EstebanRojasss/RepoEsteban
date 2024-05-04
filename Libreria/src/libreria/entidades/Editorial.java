@@ -14,4 +14,29 @@ public class Editorial implements Serializable{
     protected Long id;
     protected String nombre;
     protected Boolean alta;
+
+    public Editorial() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Boolean getAlta() {
+        return alta;
+    }
+
+    public void setAlta(Boolean alta) {
+        this.alta = alta;
+    }
+    
+    
 }
