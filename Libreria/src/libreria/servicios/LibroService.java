@@ -36,7 +36,7 @@ public class LibroService {
             System.out.println("Ingrese el titulo del libro: ");
             titulo = sc.next();
             libro.setTitulo(titulo);
-            if (dao.buscarLibroPorTitulo(titulo).isEmpty()) {
+            if (buscarLibroPorTitulo(titulo).isEmpty()) {
                 break;
             } else {
                 System.out.println("El titulo ya se encuentra registrado.");
@@ -158,12 +158,13 @@ public class LibroService {
                     System.out.println("Ingrese el titulo del libro: ");
                     titulo = sc.next();
                     libro.setTitulo(titulo);
-                    if (dao.buscarLibroPorTitulo(titulo).isEmpty()) {
+                    if (buscarLibroPorTitulo(titulo).isEmpty()) {
                         break;
                     } else {
                         System.out.println("El titulo ya se encuentra registrado.");
                     }
                 } while (true);
+                break;
             }
             case 2 -> {
                 do {
@@ -182,6 +183,7 @@ public class LibroService {
                         sc.next();
                     }
                 } while (true);
+                break;
             }
             case 3 -> {
                 do {
@@ -195,6 +197,7 @@ public class LibroService {
                         System.out.println("Ha ocurrido un error.");
                     }
                 } while (true);
+                break;
             }
             case 4 -> {
                 do {
@@ -218,6 +221,7 @@ public class LibroService {
                         System.out.println("Ocurrio un error.");
                     }
                 } while (true);
+                break;
             }
             case 5 -> {
                 do {
@@ -241,11 +245,15 @@ public class LibroService {
                         System.out.println("Ocurrio un error.");
                     }
                 } while (true);
+                break;
             }
             case 6 -> {
-                    if(libro.getAlta()){
-                        libro.setAlta(true);
-                    }else libro.setAlta(false);
+                if (libro.getAlta()) {
+                    libro.setAlta(true);
+                } else {
+                    libro.setAlta(false);
+                }
+                break;
             }
         }
         dao.updateLibro(libro);
@@ -279,10 +287,27 @@ public class LibroService {
         return dao.buscarLibroPorISBN(ISBN);
     }
     
-    public List<Libro> buscarPorNombreAutor(){
+    public List<Libro> buscarLibroPorTitulo(){
+        System.out.println("Ingrese el titulo del libro: ");
+        String titulo = sc.next();
+        List<Libro> libros = dao.buscarLibroPorTitulo(titulo);
+        return libros;
+    }
+     public List<Libro> buscarLibroPorTitulo(String titulo){ 
+         return dao.buscarLibroPorTitulo(titulo);
+    }
+
+    public List<Libro> buscarPorNombreAutor() {
         System.out.println("Ingrese el nombre del autor.");
         String nombre = sc.next();
         List<Libro> libros = dao.buscarLibroPorNombreAutor(nombre);
+        return libros;
+    }
+
+    public List<Libro> buscarPorNombreEditorial() {
+        System.out.println("Ingrese el nombre de la editorial: ");
+        String nombre = sc.next();
+        List<Libro> libros = dao.buscarLibroPorNombreEditorial(nombre);
         return libros;
     }
 }

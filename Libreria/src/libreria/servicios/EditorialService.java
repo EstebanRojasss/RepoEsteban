@@ -58,11 +58,13 @@ public class EditorialService {
                  System.out.println("Ingrese el nuevo nombre: ");
                  String nombre = sc.next();
                  editorial.setNombre(nombre);
+                 break;
              }
              case 2 ->{
                  if(editorial.getAlta()){
                      editorial.setAlta(false);
                  }else editorial.setAlta(true);
+                 break;
              }
          }
          dao.update(editorial);

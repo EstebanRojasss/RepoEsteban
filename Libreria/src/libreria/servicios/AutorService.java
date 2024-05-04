@@ -61,14 +61,15 @@ public class AutorService {
                 System.out.println("Ingrese el nombre nuevo: ");
                 nombre = sc.next();
                 autor.setNombre(nombre);
+                break;
             }
             case 2 -> {
                 if(autor.getAlta()){
                     autor.setAlta(false);
                 }else autor.setAlta(true);
+                break;
             }
         }
-        
         dao.update(autor);
     }
 
