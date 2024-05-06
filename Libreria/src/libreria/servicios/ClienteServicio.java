@@ -13,7 +13,7 @@ public class ClienteServicio {
         dao = new ClienteRepositorio();
     }
 
-    public void crearCliente() {
+    public Cliente crearCliente() {
         Cliente cliente = new Cliente();
         String respuesta;
         do {
@@ -71,6 +71,7 @@ public class ClienteServicio {
             }
         } while (true);
         dao.create(cliente);
+        return cliente;
     }
 
     public void editarCliente() {
@@ -107,6 +108,7 @@ public class ClienteServicio {
                 } 
             } catch (Exception e) {
                 System.out.println("Ocurrio un error. Ingrese un numero");
+                sc.next();
             }
         } while (true);
 

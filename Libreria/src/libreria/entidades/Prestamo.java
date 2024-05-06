@@ -20,7 +20,7 @@ public class Prestamo implements Serializable{
     @Temporal(TemporalType.DATE)
     private LocalDate fechaPrestamo;
     @Temporal(TemporalType.DATE)
-    private Date fechaDevolucion;
+    private LocalDate fechaDevolucion;
     @OneToOne
     private Libro libro;
     @OneToOne
@@ -37,11 +37,11 @@ public class Prestamo implements Serializable{
         this.fechaPrestamo = fechaPrestamo;
     }
 
-    public Date getFechaDevolucion() {
+    public LocalDate getFechaDevolucion() {
         return fechaDevolucion;
     }
 
-    public void setFechaDevolucion(Date fechaDevolucion) {
+    public void setFechaDevolucion(LocalDate fechaDevolucion) {
         this.fechaDevolucion = fechaDevolucion;
     }
 
