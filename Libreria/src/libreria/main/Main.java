@@ -1,7 +1,6 @@
 package libreria.main;
 
 import java.util.Scanner;
-import libreria.entidades.Autor;
 import libreria.servicios.AutorService;
 import libreria.servicios.EditorialService;
 import libreria.servicios.LibroService;
@@ -13,13 +12,14 @@ public class Main {
         EditorialService es = new EditorialService();
         LibroService ls = new LibroService();
         Scanner sc = new Scanner(System.in).useDelimiter("\n");
+
         boolean menu = true;
         do {
             int opcion = 0;
             do {
                 try {
-                    System.out.println("MENU DE OPCIONES");
                     System.out.println("\n");
+                    System.out.println("MENU DE OPCIONES");
                     System.out.println("1. Agregar autor, editorial, libro.");
                     System.out.println("2. Dar de alta/baja autor, editorial, libro");
                     System.out.println("3. Buscar Autor por nombre.");
@@ -64,7 +64,6 @@ public class Main {
                         }
                         case 3 -> {
                             ls.crearLibro();
-                            break;
                         }
                         default -> {
                             System.out.println("Opcion no valida.");
@@ -113,7 +112,7 @@ public class Main {
                     break;
                 }
                 case 4 -> {
-                    ls.buscarLibroPorISBN();
+                    System.out.println(ls.buscarLibroPorISBN());
                     break;
                 }
                 case 5 -> {

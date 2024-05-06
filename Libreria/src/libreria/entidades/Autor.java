@@ -37,6 +37,11 @@ public class Autor implements Serializable{
     public Long getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "Autor{" + "id=" + id + ", nombre=" + nombre + ", alta=" + alta + '}';
+    }
     
     
 }

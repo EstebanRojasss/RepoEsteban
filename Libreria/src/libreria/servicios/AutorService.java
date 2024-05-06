@@ -7,8 +7,12 @@ import libreria.entidades.Autor;
 
 public class AutorService {
 
-    AutorRepositorio dao = new AutorRepositorio();
-    private Scanner sc = new Scanner(System.in).useDelimiter("\n");
+    AutorRepositorio dao;
+
+    public AutorService() {
+        dao = new AutorRepositorio();
+    }
+     Scanner sc = new Scanner(System.in).useDelimiter("\n");
 
     public Autor crearAutor(String nombre) {
         Autor autor = new Autor();
@@ -17,7 +21,7 @@ public class AutorService {
         dao.createAutor(autor);
         return autor;
     }
-    
+
     public Autor crearAutor() {
         System.out.println("Ingrese el nombre del autor: ");
         String nombre = sc.next();
@@ -49,24 +53,26 @@ public class AutorService {
                                1.Editar 
                                2.Dar de alta/baja""");
             try {
-            opcion = sc.nextInt();
-            break;
+                opcion = sc.nextInt();
+                break;
             } catch (Exception e) {
                 System.out.println("Ha ocurrido un error.");
             }
         } while (true);
         String nombre;
-        switch(opcion){
-            case 1 -> { 
+        switch (opcion) {
+            case 1 -> {
                 System.out.println("Ingrese el nombre nuevo: ");
                 nombre = sc.next();
                 autor.setNombre(nombre);
                 break;
             }
             case 2 -> {
-                if(autor.getAlta()){
+                if (autor.getAlta()) {
                     autor.setAlta(false);
-                }else autor.setAlta(true);
+                } else {
+                    autor.setAlta(true);
+                }
                 break;
             }
         }
@@ -82,8 +88,8 @@ public class AutorService {
     public Autor retornarPorId(Long id) {
         return dao.buscarAutorPorId(id);
     }
-    
-    public List<Autor>buscarAutorPorNombre(String nombre){
+
+    public List<Autor> buscarAutorPorNombre(String nombre) {
         return dao.buscarAutorPorNombre(nombre);
     }
 

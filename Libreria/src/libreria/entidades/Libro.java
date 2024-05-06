@@ -2,6 +2,7 @@
 package libreria.entidades;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
@@ -10,12 +11,19 @@ import javax.persistence.OneToOne;
 public class Libro implements Serializable{
     @Id
     protected Long ISBN;
+    @Column
     protected String titulo;
+    @Column
     protected Integer anio;
+    @Column
     protected Integer ejemplares;
+    @Column
     protected Integer ejemplaresPrestados;
+    @Column
     protected Integer ejemplaresRestantes;
+    @Column
     protected Boolean alta;
+    
     @OneToOne
     protected Autor autor;
     @OneToOne
@@ -23,6 +31,20 @@ public class Libro implements Serializable{
 
     public Libro() {
     }
+
+    public Libro(Long ISBN, String titulo, Integer anio, Integer ejemplares, Integer ejemplaresPrestados, Integer ejemplaresRestantes, Boolean alta, Autor autor, Editorial editorial) {
+        this.ISBN = ISBN;
+        this.titulo = titulo;
+        this.anio = anio;
+        this.ejemplares = ejemplares;
+        this.ejemplaresPrestados = ejemplaresPrestados;
+        this.ejemplaresRestantes = ejemplaresRestantes;
+        this.alta = alta;
+        this.autor = autor;
+        this.editorial = editorial;
+    }
+    
+    
 
     public String getTitulo() {
         return titulo;
@@ -96,6 +118,13 @@ public class Libro implements Serializable{
     public Long getISBN() {
         return ISBN;
     }
+
+    @Override
+    public String toString() {
+        return "Libro{" + "ISBN=" + ISBN + ", titulo=" + titulo + ", anio=" + anio + ", ejemplares=" + ejemplares + ", ejemplaresPrestados=" + ejemplaresPrestados + ", ejemplaresRestantes=" + ejemplaresRestantes + ", alta=" + alta + ", autor=" + autor + ", editorial=" + editorial + '}';
+    }
+    
+    
     
     
     

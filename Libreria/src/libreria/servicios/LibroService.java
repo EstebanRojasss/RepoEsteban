@@ -9,17 +9,24 @@ import libreria.repositorios.LibroRepositorio;
 
 public class LibroService {
 
-    LibroRepositorio dao = new LibroRepositorio();
-    private final Scanner sc = new Scanner(System.in).useDelimiter("\n");
-    AutorService as = new AutorService();
-    EditorialService es = new EditorialService();
+    LibroRepositorio dao;
+    AutorService as;
+    EditorialService es;
+
+    public LibroService() {
+        dao = new LibroRepositorio();
+        as = new AutorService();
+        es = new EditorialService();
+    }
+
+    Scanner sc = new Scanner(System.in).useDelimiter("\n");
 
     public void crearLibro() {
         Libro libro = new Libro();
-        Long isbn;
         do {
+            System.out.println("Ingrese el ISBN del libro.");
             try {
-                isbn = sc.nextLong();
+                Long isbn = sc.nextLong();
                 libro.setISBN(isbn);
                 if (buscarLibroISBN(isbn)) {
                     break;
@@ -71,7 +78,7 @@ public class LibroService {
                 System.out.println("Ha ocurrido un error.");
             }
         } while (true);
-
+        libro.setAlta(true);
         do {
             String nombre;
             String respuesta;
@@ -115,7 +122,7 @@ public class LibroService {
                 System.out.println("Ocurrio un error.");
             }
         } while (true);
-        libro.setAlta(true);
+        dao.createLibro(libro);
     }
 
     public void darBajaorEditar() {
@@ -279,6 +286,7 @@ public class LibroService {
                 return true;
             }
         } catch (Exception e) {
+            System.out.println("Hola");
         }
         return false;
     }
@@ -286,15 +294,16 @@ public class LibroService {
     public Libro retornarLibro(Long ISBN) {
         return dao.buscarLibroPorISBN(ISBN);
     }
-    
-    public List<Libro> buscarLibroPorTitulo(){
+
+    public List<Libro> buscarLibroPorTitulo() {
         System.out.println("Ingrese el titulo del libro: ");
         String titulo = sc.next();
         List<Libro> libros = dao.buscarLibroPorTitulo(titulo);
         return libros;
     }
-     public List<Libro> buscarLibroPorTitulo(String titulo){ 
-         return dao.buscarLibroPorTitulo(titulo);
+
+    public List<Libro> buscarLibroPorTitulo(String titulo) {
+        return dao.buscarLibroPorTitulo(titulo);
     }
 
     public List<Libro> buscarPorNombreAutor() {

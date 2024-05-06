@@ -7,20 +7,20 @@ import javax.persistence.Persistence;
 public class Dao<T> {
 
     protected EntityManagerFactory emf;
-    protected EntityManager em;
+    public EntityManager em;
 
     public Dao() {
         emf = Persistence.createEntityManagerFactory("LibreriaPU");
         em = emf.createEntityManager();
     }
 
-    protected void conect() {
+    public void conect() {
         if (!em.isOpen()) {
             em = emf.createEntityManager();
         }
     }
 
-    protected void disconect() {
+    public void disconect() {
         if (em.isOpen()) {
             em.close();
         }
