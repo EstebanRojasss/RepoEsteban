@@ -10,13 +10,9 @@ import libreria.entidades.Cliente;
 public class PrestamoServicio {
     
     Scanner sc = new Scanner(System.in).useDelimiter("\n");
-    PrestamoRepositorio dao;
+    PrestamoRepositorio dao = new PrestamoRepositorio();
     LibroService ls = new LibroService();
     ClienteServicio cs = new ClienteServicio();
-    
-    public PrestamoServicio() {
-        dao = new PrestamoRepositorio();
-    }
     
     public void asginarPrestamo() {
         Prestamo prestamo = new Prestamo();
@@ -36,7 +32,7 @@ public class PrestamoServicio {
         } while (true);
         prestamo.setFechaPrestamo(fechaParseada);
         do {
-            System.out.println("Ingrese la fecha del prestamo: (FORMATO aaaa-mm-dd)");
+            System.out.println("Ingrese la fecha de la devolucion: (FORMATO aaaa-mm-dd)");
             try {
                 fecha = sc.next();
                 fechaParseada = LocalDate.parse(fecha);
@@ -107,10 +103,5 @@ public class PrestamoServicio {
             }
         }
         dao.createPrestamo(prestamo);
-    }
-    
-    
-    public void devolucionLibro(){
-        
     }
 }

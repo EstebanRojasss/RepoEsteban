@@ -4,29 +4,29 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
-public class Dao<T> {
+public abstract class Dao<T> {
 
     protected EntityManagerFactory emf;
     public EntityManager em;
 
     public Dao() {
-        emf = Persistence.createEntityManagerFactory("LibreriaPU");
-        em = emf.createEntityManager();
+        this.emf = Persistence.createEntityManagerFactory("LibreriaPU");
+        this.em = emf.createEntityManager();
     }
 
-    public void conect() {
+    protected void conect() {
         if (!em.isOpen()) {
             em = emf.createEntityManager();
         }
     }
 
-    public void disconect() {
+    protected void disconect() {
         if (em.isOpen()) {
             em.close();
         }
     }
 
-    public void create(T object) {
+    protected void create(T object) {
         try {
             conect();
             em.getTransaction().begin();
@@ -42,7 +42,7 @@ public class Dao<T> {
         }
     }
 
-    public void update(T object) {
+    protected void update(T object) {
        try {
             conect();
             em.getTransaction().begin();
@@ -58,7 +58,7 @@ public class Dao<T> {
         }
     }
 
-    public void delete(T object) {
+    protected void delete(T object) {
        try {
             conect();
             em.getTransaction().begin();

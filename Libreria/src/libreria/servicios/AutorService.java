@@ -76,7 +76,7 @@ public class AutorService {
                 break;
             }
         }
-        dao.update(autor);
+        dao.updateAutor(autor);
     }
 
     public List<Autor> buscarAutorPorNombre() {

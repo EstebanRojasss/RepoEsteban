@@ -75,7 +75,7 @@ public class EditorialService {
                 break;
             }
         }
-        dao.update(editorial);
+        dao.updateEditorial(editorial);
     }
 
     public List<Editorial> buscarEditorialNombre() {

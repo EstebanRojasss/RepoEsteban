@@ -6,13 +6,8 @@ import libreria.entidades.Cliente;
 
 public class ClienteServicio {
 
-    ClienteRepositorio dao;
+    ClienteRepositorio dao = new ClienteRepositorio();
     Scanner sc = new Scanner(System.in).useDelimiter("\n");
-
-    public ClienteServicio() {
-        dao = new ClienteRepositorio();
-    }
-
     public Cliente crearCliente() {
         Cliente cliente = new Cliente();
         String respuesta;
